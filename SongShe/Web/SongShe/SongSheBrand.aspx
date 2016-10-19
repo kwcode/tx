@@ -50,18 +50,6 @@
                         </div>
                     </li>
                     <%} %>
-                    <%for (int i = 0; i < TeamList.Rows.Count; i++)
-                      {%>
-                    <li>
-                        <div class="doctorimg">
-                            <img src="<%=TeamList.Rows[i]["ImgUrl"] %>" /></div>
-                        <div class="doctorinfo">
-                            <div class="name"><%=TeamList.Rows[i]["Name"] %></div>
-                            <div class="job" style="font-size:20px;"><%=TeamList.Rows[i]["Position"] %></div>
-                            <div class="descript"><%=TeamList.Rows[i]["Description"].ToString().Replace(" ","&nbsp;") %></div>
-                        </div>
-                    </li>
-                    <%} %>
                     <%--<li>
                         <div class="doctorimg">
                             <img src="/Image/doctor_1.jpg" /></div>
