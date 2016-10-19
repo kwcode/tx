@@ -1,0 +1,317 @@
+﻿/************轮播图样式*************/
+#focus {
+    width: 100%;
+    min-width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+    #focus ul {
+        position: absolute;
+        width: 100%;
+        min-width: 1200px;
+        height: 500px;
+        margin: 0;
+        padding: 0;
+        z-index: 5;
+    }
+
+        #focus ul li {
+            height: 500px;
+            overflow: hidden;
+            float: left;
+            position: relative;
+        }
+
+            #focus ul li a img {
+                width: 100%;
+                min-width: 1200px;
+                height: 500px;
+            }
+
+            #focus ul li div {
+                position: absolute;
+                overflow: hidden;
+            }
+
+    #focus .btn {
+        position: absolute;
+        width: 100%;
+        right: 0;
+        bottom: 0px;
+        /*top: 475px;*/
+        margin-bottom:10px;
+        text-align: center;
+        z-index: 7;
+    }
+
+        #focus .btn span {
+            display: inline-block;
+            _display: inline;
+            _zoom: 1;
+            width: 10px;
+            height: 10px;
+            _font-size: 0;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            background: #ccc;
+        }
+
+            #focus .btn span:hover {
+                background: #43BCC6;
+            }
+
+.cline {
+    border-top: 8px solid #43BCC5;
+}
+/**********页面标题通用样式************/
+.title {
+    height: 35px;
+    width: 200px;
+    color: white;
+    background: #43BCC5;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: KaiTi;
+    margin-top: 50px;
+}
+
+    .title span {
+        font-size: 14px;
+        font-style: italic;
+        font-family: FangSong;
+    }
+
+.line {
+    border-top: 1px solid #E6E6E6;
+    margin-top: 10px;
+}
+/***********新闻中心************/
+.newimg {
+    float: left;
+}
+
+    .newimg img {
+        width: 330px;
+        height: 215px;
+    }
+
+.newsinfo {
+    float: left;
+    width: 400px;
+    height: 215px;
+    margin-left: 40px;
+    overflow: hidden;
+}
+
+    .newsinfo .newstitle {
+        font-size: 25px;
+    }
+ .newsinfo  .newstitle a {
+color: #43BCC5;
+}
+  .newsinfo  .newscontent a {
+ color: #8C8C8C;
+}
+    .newsinfo .newscontent {
+        margin-top: 25px;
+        text-indent: 20px;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 2px;
+        height: 120px;
+    }
+
+.newslist {
+    clear: both;
+    border: 1px solid #fff;
+}
+
+    .newslist li a {
+        display: block;
+        height: 35px;
+        color: #8C8C8C;
+    }
+
+    .newslist li .news {
+        color: #43BCC5;
+        font-size: 14px;
+        float: left;
+    }
+
+    .newslist li .newtitle {
+        float: left;
+        height: 35px;
+        display: inline-block;
+        width: 560px;
+        margin-left: 20px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .newslist li .newtime {
+        float: left;
+        margin-left: 20px;
+    }
+
+    .newslist li {
+        height: 35px;
+        line-height: 35px;
+        padding-left: 10px;
+        width: 755px;
+        margin-top: 15px;
+        border: 1px solid #ABABAB;
+    }
+
+.shipindiv {
+    float: left;
+    margin-left: 40px;
+    width: 385px;
+    height: 370px;
+}
+
+    .shipindiv video {
+        width: 385px;
+        height: 370px;
+    }
+/***********母婴照护************/
+.muzhdiv li {
+    float: left;
+    margin-top: 20px;
+    width: 170px;
+}
+
+    .muzhdiv li a {
+        display: block;
+        width: 100px;
+    }
+
+        .muzhdiv li a img {
+            height: 100px;
+        }
+/**********专家团队***********/
+.doctorimg {
+    float: left;
+}
+
+    .doctorimg img {
+        width: 300px;
+        height: 300px;
+    }
+
+.doctors {
+    width: 852px;
+    float: left;
+    margin-left: 40px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.doctordescript {
+    width: 500px;
+}
+
+    .doctordescript .name {
+        color: #43BCC5;
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .doctordescript .zc {
+        font-size: 16px;
+        color: #aaa;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .doctordescript .introduct {
+        line-height: 25px;
+        color: #aaa;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+
+
+.docotrimgscorll {
+    clear: both;
+    width: 1160px;
+    margin: 0px auto;
+    margin-bottom: 80px;
+}
+
+    .docotrimgscorll .leftbutton {
+        background: url(/Image/leftbtn.png);
+        float: left;
+        width: 18px;
+        height: 52px;
+        cursor: pointer;
+        margin-top: 50px;
+    }
+
+
+    .docotrimgscorll ul {
+        float: left;
+        height: 140px;
+        padding-top: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-left:14px;
+        position:absolute;
+    }
+
+#imgscorll {
+    float: left;
+    overflow: hidden;
+    width: 810px;
+    position:relative;
+    height:155px;
+
+}
+
+.docotrimgscorll ul li {
+    height: 130px;
+    width: 120px;
+    margin-right: 14px;
+    float: left;
+}
+
+.docotrimgscorll .rightbutton {
+    background: url(/Image/rightbtn.png);
+    float: left;
+    width: 21px;
+    height: 52px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.docotrimgscorll li img {
+    height: 120px;
+    width: 120px;
+}
+/**************环境展示*************/
+.environmentshow {
+    margin-top:10px;
+}
+.environmentshow ul li{
+    float:left;
+    margin-right:5px;
+    margin-left:5px;
+    margin-top:10px;
+}
+    .environmentshow ul li.hbigimg img{
+        width:376px;
+        height:200px;
+    }
+    .environmentshow ul li.hsmallimg img{
+        width:203px;
+        height:200px;
+    }

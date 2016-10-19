@@ -1,0 +1,48 @@
+﻿/*************职位招聘**************/
+.pagecontent ul li {
+    border-bottom: 1px dotted #F09092;
+    padding-bottom: 20px;
+}
+
+    .pagecontent ul li .jobname {
+        color: #F09092;
+        font-size: 28px;
+        font-weight: bold;
+        font-family: KaiTi;
+        margin-top: 40px;
+    }
+
+    .pagecontent ul li .jobimg {
+        float: left;
+    }
+        .pagecontent ul li .jobimg img {
+            width:140px;
+            height:150px;
+        }
+    .pagecontent ul li .jobyq {
+        float: left;
+        margin-left:30px;
+        line-height:35px;
+        color:#898989;
+    }
+    .pagecontent ul li .jobinfo {
+        margin-top:20px;
+    }
+    .pagecontent ul li .job {
+        clear: both;
+        height: 250px;
+        overflow:hidden;
+    }
+    .pagecontent ul li .gwyq {
+        line-height:25px;
+        color:#898989;
+    }
+    .contactwey{
+        color:#F09092;
+        margin-top:30px;
+        line-height:30px;
+        font-size:20px;
+        font-family:KaiTi;
+        font-weight:bold;
+        letter-spacing:2px;
+    }

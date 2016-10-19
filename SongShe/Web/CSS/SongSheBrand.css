@@ -1,0 +1,72 @@
+﻿/***********通用标题样式*************/
+.title {
+    height: 40px;
+    border-bottom: 1px dotted #F09192;
+    width: 450px;
+    color: #F09192;
+    margin-top: 40px;
+}
+
+    .title span {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: KaiTi;
+    }
+
+    .title label {
+        margin-left: 15px;
+        font-size: 16px;
+    }
+
+.introduct {
+    line-height: 25px;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #898989;
+    text-indent: 30px;
+    width: 900px;
+}
+/**************品牌介绍***************/
+.introductimg {
+    text-align: center;
+}
+
+    .introductimg img {
+        max-width: 1200px;
+        margin-top: 30px;
+    }
+/************医疗团队**************/
+.doctorlist li .doctorimg {
+    float: left;
+}
+.doctorlist li {
+    float:left;
+    margin-top:50px;
+    margin-right:80px;
+}
+    .doctorlist li .doctorimg img {
+        height: 200px;
+        width: 185px;
+    }
+.doctorlist li .doctorinfo .name {
+    color:#898989;
+    font-size:28px;
+    font-weight:bold;
+}
+.doctorlist li .doctorinfo .job {
+    font-size:14px;
+    color:#ADADAD;
+    margin-top:10px;
+}
+.doctorlist li .doctorinfo .descript {
+    color:#ADADAD;
+    line-height:25px;
+    width:300px;
+    margin-top:30px;
+    height:100px;
+    overflow:hidden;
+}
+.doctorlist li .doctorinfo {
+    float:left;
+    margin-left:30px;
+}

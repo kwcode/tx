@@ -1,0 +1,292 @@
+﻿/**********网页全局样式************/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Microsoft YaHei';
+    font-size: 12px;
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+    min-width: 1200px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    a:focus {
+        outline: none;
+    }
+
+ul, li {
+    list-style: none;
+}
+
+img {
+    border: 0px;
+}
+/********网页顶部***********/
+.head {
+    width: 100%;
+    min-width: 1200px;
+    height: 130px;
+    background: #43BCC5;
+}
+
+    .head .headcontent {
+        width: 1200px;
+        margin: 0px auto;
+    }
+
+    .head .logo {
+        float: left;
+    }
+        .head .logo a {
+            display:block;
+        }
+        .head .logo img {
+            height: 70px;
+            margin-top: 29px;
+        }
+
+    .head .nav {
+        float: left;
+        margin-left: 25px;
+    }
+
+        .head .nav ul li {
+            float: left;
+        }
+
+            .head .nav ul li a {
+                display: block;
+                height: 90px;
+                width: 155px;
+                text-align: center;
+                color: white;
+                line-height: 28px;
+                padding-top: 40px;
+                letter-spacing: 1.5px;
+            }
+
+                .head .nav ul li .parentnav:hover {
+                    background: #F09293;
+                }
+.currenta {
+    background: #F09293;
+}
+                .head .nav ul li a div {
+                    font-size: 20px;
+                    letter-spacing: 3px;
+                    font-family:KaiTi;
+                }
+
+                .head .nav ul li a span {
+                    font-style: italic;
+                    font-family: FangSong;
+                }
+
+        .head .nav .childnav {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            background: #43BCC5;
+            height: 170px;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+            -moz-opacity: 0.5;
+            color: white;
+            display: none;
+            z-index:100;
+        }
+
+.childnavul {
+    display: none;
+    position: absolute;
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+    height: 170px;
+    overflow: hidden;
+    z-index:100;
+}
+
+    .childnavul a {
+        text-align: left !important;
+        width: 297px !important;
+        height: 150px !important;
+        padding-top: 0px !important;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+        .childnavul a span {
+            font-size: 18px;
+            font-style: normal !important;
+            font-family: KaiTi !important;
+            text-decoration: underline;
+            margin-left: 35px;
+        }
+
+        .childnavul a div {
+            height: 118px;
+            width: 297px;
+            margin-left: 20px;
+            line-height: 23px !important;
+            letter-spacing: 0px !important;
+        }
+
+            .childnavul a div span {
+                margin-left: 0px;
+                display: block;
+                font-size: 12px !important;
+                -webkit-transform: scale(0.9);
+                text-decoration: none;
+            }
+/********内容*********/
+.content {
+    padding-bottom:174px;
+}
+.pagecontent {
+    width:1200px;
+    margin:20px auto;
+}
+/********网页底部**********/
+#footer {
+    clear: both;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+}
+
+.foot {
+    width: 100%;
+    min-width: 1200px;
+    height: 150px;
+    clear: both;
+    position: absolute;
+    bottom: 0px;
+    background: #43BCC5;
+}
+
+.footcontent {
+    width: 800px;
+    margin: 35px auto;
+    height: 80px;
+}
+
+    .footcontent .elogo {
+        float: left;
+        height: 80px;
+        width: 300px;
+        border-right: 1px solid white;
+    }
+
+        .footcontent .elogo img {
+            height: 70px;
+        }
+
+    .footcontent .telphone {
+        float: left;
+        color: white;
+        margin-left: 40px;
+        margin-top: 15px;
+        line-height: 25px;
+        font-size: 14px;
+    }
+
+    .footcontent .contact {
+        float: left;
+        margin-left: 50px;
+        margin-top:10px;
+    }
+
+        .footcontent .contact img {
+            height: 50px;
+            margin-left: 10px;
+        }
+
+
+/************子页面的大图展示*************/
+.bigimg {
+    position: relative;
+}
+
+    .bigimg img {
+        width: 100%;
+        min-width: 1200px;
+        height: 500px;
+    }
+
+.bigimgtext {
+    position: absolute;
+    background: #43BCC5;
+    bottom: -18px;
+    width: 350px;
+    left: 50%;
+    margin-left: -175px;
+    border-radius: 5px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 24px;
+    font-family: KaiTi;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/***********返回顶部***********/
+.returntop {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    bottom: 170px;
+    right: 0px;
+    cursor: pointer;
+    display: none;
+}
+/*************网页右侧在线咨询**************/
+.leftzx {
+    min-width:105px;
+    min-height:310px;
+    border:1px solid #43BCC5;
+    position:fixed;
+    top:25%;
+    text-align:center;
+    right:-8px;
+    border-radius:10px;
+    background:#fff;
+    z-index:100;
+    padding-bottom:10px;
+}
+    .leftzx a {
+        display:block;
+        margin-top:10px;
+        position:relative;
+    }
+    .leftzx .zxtelphone {
+        background:#43BCC5;
+        color:white;
+        position:absolute;
+        top:-10px;
+        right:10px;
+        height:80px;
+        width:0px;
+        font-size:24px;
+        line-height:80px;
+    }
+    .leftzx img {
+        width:80px;
+        height:80px;
+    }
+    .leftzx div {
+        color:#43BCC5;
+        margin-top:10px;
+    }
