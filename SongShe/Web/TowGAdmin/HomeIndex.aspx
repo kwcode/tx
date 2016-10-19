@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>双轨后台管理</title>
+    <title>颂玺母婴后台管理</title>
     <link href="/TowGAdmin/themes/default/style.css" rel="stylesheet" />
     <link href="/TowGAdmin/themes/css/core.css" rel="stylesheet" />
     <link href="/TowGAdmin/themes/css/print.css" rel="stylesheet" />
@@ -116,7 +116,7 @@
             <div id="header">
                 <div class="headerNav">
                     <%--<a class="logo" href="#">OHI8</a>--%>
-                    <span style="color:white;font-size:26px;position:relative;top:10px;left:15px;font-family:SimHei;">双轨后台管理系统</span>
+                    <span style="color:white;font-size:26px;position:relative;top:10px;left:15px;font-family:SimHei;">颂玺母婴后台管理系统</span>
                     <ul class="nav" id="ul_TopContent">
                         <li><a href="javascript:void(0);"><%=manager==null?"":manager.ManagerName %>欢迎使用本系统</a></li>
                         <li><a id="a_Times" href="javascript:void(0);"></a></li>

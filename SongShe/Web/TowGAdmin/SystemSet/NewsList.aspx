@@ -55,17 +55,19 @@
                     <li class=""><a title="添加" target="dialog" class="add" href="/TowGAdmin/SystemSet/AENews.aspx" fresh="false" width="1000" height="610"><span>添加</span></a></li>
                 </ul>
             </div>
-            <table class="table" layouth="138">
+            <table class="table" width="1260" layouth="138">
                 <thead>
                     <tr>
                         <th width="100">新闻图片</th>
                         <th width="200">新闻标题</th>
+                        <th width="300">新闻简介</th>
                         <th width="100">新闻来源</th>
                         <th width="70">新闻类型</th>
                         <th width="70">是否显示</th>
                         <th width="60">优先值</th>
                         <%--<th>发布者</th>--%>
                         <th width="130">发布时间</th>
+                        <th width="130">修改时间</th>
                         <th class="operate" width="60">操作</th>
                     </tr>
                 </thead>
@@ -78,13 +80,15 @@
                         <td>
                             <img src="<%= dr["ImgUrl"] %>" style="max-height: 100px; max-width: 100px;" onerror="$(this).hide()" />
                         </td>
-                        <td><%= dr["Title"] %></td>
+                        <td title="<%= dr["Title"] %>"><%= dr["Title"] %></td>
+                        <td title="<%= dr["Description"] %>"><%= dr["Description"] %></td>
                         <td><%= dr["Source"] %></td>
                         <td><%= dr["TypeName"] %></td>
                         <td><%= Maticsoft.Common.CommonHelper.Toint(dr["Status"])==1?"显示中":"不显示" %></td>
                         <td><%= dr["Sort"] %></td>
                         <%--<td><%= dr["ManagerID"] %></td>--%>
                         <td class="operate"><%=dr["AddTime"] %> </td>
+                        <td class="operate"><%=dr["EditTime"] %> </td>
                         <td>
                             <a title="编辑" class="btnEdit" href="/TowGAdmin/SystemSet/AENews.aspx?nid=<%=dr["KeyID"] %>" target="dialog" fresh="false" width="1000" height="610">编辑</a>
                             <a title="删除" class="btnDel" href="javascript:void();" onclick="deleteConfirmMsg('/TowGAdmin/Ajax/TX_Handler.ashx?action=DeleteNews&nid=<%= dr["KeyID"] %>')">删除</a>

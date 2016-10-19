@@ -52,19 +52,25 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bigimg">
-        <img src="/Image/scorll_5.jpg" />   
+        <%pc = PageContentList.Where(p => p.KeyID == 5).FirstOrDefault(); %>
+        <img src="<%=pc==null?"":pc.ImgUrl %>" onerror="this.src='/Image/scorll_5.jpg'" />
+        <div class="bigimgtext" <%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"style='display:none;'":"" %>><%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"发现最新动态":pc.Remark %> </div>
     </div>
     <div class="pagecontent">
         <div class="newtitle">
-            <div class="ntitle">宠爱从第一次接触开始</div>
-            <div class="ntime">2016-10-06&nbsp;&nbsp;&nbsp;重庆安琪儿妇产医院</div>
+            <div class="ntitle"><%=NewsInfo.Rows[0]["Title"] %></div>
+            <div class="ntime"><%=Maticsoft.Common.CommonHelper.ToDateTime(NewsInfo.Rows[0]["EditTime"]).ToString("yyyy-MM-dd") %>&nbsp;&nbsp;&nbsp;<%=NewsInfo.Rows[0]["Source"] %></div>
         </div>
         <div class="newscontent">
-           宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始宠爱从第一次接触开始
+           <%=NewsInfo.Rows[0]["Detail"] %>
         </div>
         <div class="newsyg">
-            <a class="before">上一篇：调研重庆医院，助推民营医院发展</a>
-            <a class="after">下一篇：海峡两岸妇产权威聚首山城论道生殖健康</a>
+            <%if(BeforeNewsInfo.Rows.Count>0){ %>
+            <a class="before" href="NewsDetail.aspx?nid=<%=BeforeNewsInfo.Rows[0]["KeyID"] %>" style="overflow:hidden;word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;-webkit-line-clamp: 1;max-width:580px;">上一篇：<%=BeforeNewsInfo.Rows[0]["Title"] %></a>
+            <%}
+              if(AfterNewsInfo.Rows.Count>0){ %>
+            <a class="after" href="NewsDetail.aspx?nid=<%=AfterNewsInfo.Rows[0]["KeyID"] %>" style="overflow:hidden;word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;-webkit-line-clamp: 1;max-width:580px;">下一篇：<%=AfterNewsInfo.Rows[0]["Title"] %></a>
+            <%} %>
         </div>
     </div>
 </asp:Content>

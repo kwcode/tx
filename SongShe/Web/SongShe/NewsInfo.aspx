@@ -125,7 +125,16 @@
                 <div style="clear: both;"></div>
                 <div class="newslist">
                     <ul>
-                        <li>
+                        <%foreach (System.Data.DataRow dr in News1List.Rows)
+                          {%>
+                              <li>
+                            <a href="NewsDetail.aspx?nid=<%=dr["KeyID"] %>">
+                                <div class="newstitle"><%=dr["Title"] %></div>
+                                <div class="newstime"><%=Maticsoft.Common.CommonHelper.ToDateTime(dr["EditTime"]).ToString("yyyy-MM-dd") %></div>
+                            </a>
+                        </li>
+                          <%} %>
+                        <%--<li>
                             <a href="NewsDetail.aspx">
                                 <div class="newstitle">有专业营养师与中医师为产后妈妈精心调配出适合妈妈体质的美味月子餐。</div>
                                 <div class="newstime">2016-09-10</div>
@@ -142,7 +151,7 @@
                                 <div class="newstitle">有专业营养师与中医师为产后妈妈精心调配出适合妈妈体质的美味月子餐。</div>
                                 <div class="newstime">2016-09-10</div>
                             </a>
-                        </li>
+                        </li>--%>
                     </ul>
                 </div>
             </div>
@@ -172,7 +181,16 @@
             </div>
             <div class="newslist">
                 <ul>
-                    <li>
+                    <%foreach (System.Data.DataRow dr in News2List.Rows)
+                          {%>
+                              <li>
+                            <a href="NewsDetail.aspx?nid=<%=dr["KeyID"] %>">
+                                <div class="newstitle"><%=dr["Title"] %></div>
+                                <div class="newstime"><%=Maticsoft.Common.CommonHelper.ToDateTime(dr["EditTime"]).ToString("yyyy-MM-dd") %></div>
+                            </a>
+                        </li>
+                          <%} %>
+                    <%--<li>
                         <a href="NewsDetail.aspx">
                             <div class="newstitle">有专业营养师与中医师为产后妈妈精心调配出适合妈妈体质的美味月子餐。</div>
                             <div class="newstime">2016-09-10</div>
@@ -189,7 +207,7 @@
                             <div class="newstitle">有专业营养师与中医师为产后妈妈精心调配出适合妈妈体质的美味月子餐。</div>
                             <div class="newstime">2016-09-10</div>
                         </a>
-                    </li>
+                    </li>--%>
                 </ul>
             </div>
         </div>

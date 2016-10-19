@@ -15,7 +15,21 @@
                 $("#focus a").height(width / 2);
                 $("#focus img").height(width / 2);
             }
+            //imgscorll
+            if ($("#imgscorll a").length > 0)
+                $($("#imgscorll a")[0]).click();
         });
+        function ShowTeamInfo(obj) {
+            //alert(obj);
+            var Name = $(obj).attr("Name");
+            var Position = $(obj).attr("Position");
+            var Description = $(obj).attr("Description");
+            var ImgUrl = $(obj).attr("ImgUrl");
+            $("#imgTeam").attr("src", ImgUrl);
+            $("#divTeamName").text(Name); Position
+            $("#divTeamPosition").text(Position);
+            $("#divTeamDescription").text(Description);
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -27,7 +41,7 @@
                     <img src="<%=(pc==null)?"/Image/scorll_1.jpg":pc.ImgUrl %>" onerror="this.src='/Image/scorll_1.jpg'" /></a>
             </li>
             <li>
-                <a href="/SongShe/InfantCare.aspx">
+                <a href="/SongShe/InfantCare.aspx" style="">
                     <%pc = PageContentList.Where(p => p.KeyID == 2).FirstOrDefault(); %>
                     <img src="<%=(pc==null)?"/Image/scorll_2.jpg":pc.ImgUrl %>" onerror="this.src='/Image/scorll_2.jpg'" /></a>
             </li>
@@ -61,29 +75,41 @@
             <div style="margin-top: 20px;">
                 <div style="float: left;">
                     <div>
+                        <% System.Data.DataRow dr = NewsList != null ? NewsList.Rows[0] : null; %>
                         <div class="newimg">
                             <%--新闻图建议尺寸 width:330px; height:215px;--%>
-                            <img src="/Image/newsimg.jpg" />
+                            <img src="<%=dr!=null?dr["ImgUrl"]:"" %>" /><%--/Image/newsimg.jpg--%>
                         </div>
                         <div class="newsinfo">
-                            <div class="newstitle"><a href="NewsDetail.aspx">重庆市渝北区卫纪委党委副书记倪桂华一行莅临</a></div>
-                            <div class="newscontent" style=""><a href="NewsDetail.aspx">9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家</a></div>
+                            <div class="newstitle" style="font-weight: 800; font-family: SimSun;"><a href="NewsDetail.aspx"><%=dr!=null?dr["Title"]:"" %></a></div>
+                            <div class="newscontent" style="font-family: SimSun;"><a href="NewsDetail.aspx"><%=dr!=null?dr["Description"]:"" %></a></div>
+                            <%--<div class="newstitle" style="font-weight:800;font-family:SimSun;"><a href="NewsDetail.aspx">重庆市渝北区卫纪委党委副书记倪桂华一行莅临</a></div>
+                            <div class="newscontent" style="font-family:SimSun;"><a href="NewsDetail.aspx">9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家9月9日，重庆市渝北区卫纪委党委副书记倪桂华等相关领导、渝北区妇幼保健院等区多家</a></div>--%>
                         </div>
                     </div>
                     <ul class="newslist">
-                        <li><a href="NewsDetail.aspx">
-                            <div class="news">[新闻中心]</div>
-                            <div class="newtitle">宠爱从第一次接触开始</div>
-                            <div class="newtime">2016-09-07</div>
+                        <%for (int i = 1; i < (NewsList == null ? 0 : NewsList.Rows.Count); i++)
+                          {%>
+                        <li><a href="NewsDetail.aspx?nid=<%=NewsList.Rows[i]["KeyID"] %>">
+                            <div class="news" style="font-family: SimSun;">[新闻中心]</div>
+                            <div class="newtitle" style="font-family: SimSun;"><%=NewsList.Rows[i]["Title"] %></div>
+                            <div class="newtime" style="font-family: SimSun;"><%=Maticsoft.Common.CommonHelper.ToDateTime( NewsList.Rows[i]["EditTime"]).ToString("yyyy-MM-dd") %></div>
+                        </a></li>
+                        <%} %>
+
+                        <%--<li><a href="NewsDetail.aspx">
+                            <div class="news" style="font-family:SimSun;">[新闻中心]</div>
+                            <div class="newtitle" style="font-family:SimSun;">宠爱从第一次接触开始</div>
+                            <div class="newtime" style="font-family:SimSun;">2016-09-07</div>
                         </a></li>
                         <li><a href="NewsDetail.aspx">
-                            <div class="news">[新闻中心]</div>
-                            <div class="newtitle">安琪儿“一站式孕产照护服务”产品发布会成功举办</div>
-                            <span class="newtime">2016-09-05</span></a></li>
+                            <div class="news" style="font-family:SimSun;">[新闻中心]</div>
+                            <div class="newtitle" style="font-family:SimSun;">安琪儿“一站式孕产照护服务”产品发布会成功举办</div>
+                            <span class="newtime" style="font-family:SimSun;">2016-09-05</span></a></li>
                         <li><a href="NewsDetail.aspx">
-                            <div class="news">[新闻中心]</div>
-                            <div class="newtitle">调研重庆安琪儿妇产医院，助推民营医院发展</div>
-                            <span class="newtime">2016-09-05</span></a></li>
+                            <div class="news" style="font-family:SimSun;">[新闻中心]</div>
+                            <div class="newtitle" style="font-family:SimSun;">调研重庆安琪儿妇产医院，助推民营医院发展</div>
+                            <span class="newtime" style="font-family:SimSun;">2016-09-05</span></a></li>--%>
                     </ul>
                 </div>
                 <div class="shipindiv">
@@ -143,20 +169,25 @@
             <div style="margin-top: 20px;">
                 <div class="doctorimg">
                     <%--建议尺寸300*300--%>
-                    <img src="/Image/doctor_1.jpg" />
+                    <img id="imgTeam" src="/Image/doctor_1.jpg" />
                 </div>
                 <div class="doctors">
                     <div class="doctordescript">
-                        <div class="name">漆洪波</div>
-                        <div class="zc">教授、医学博士、博士生导师</div>
+                        <div class="name" id="divTeamName" style="font-family: SimSun;font-weight:900;">漆洪波</div>
+                        <div class="zc" id="divTeamPosition" style="font-family: SimSun;font-weight:500;font-size:20px;">教授、医学博士、博士生导师</div>
                         <div style="border-bottom: 1px dashed #43BCC5;"></div>
-                        <div class="introduct">重庆医科大学附属第一医院妇产科主任、重庆市高危妊娠诊治中心、重庆市产前诊断中心和重庆市胎儿医学中心主任，“中国-加拿大-新西兰联合母胎医学实验室”主任。</div>
+                        <div class="introduct" id="divTeamDescription" style="font-family: SimSun;overflow:hidden;word-break: break-all;display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;-webkit-line-clamp: 3;height:75px;">重庆医科大学附属第一医院妇产科主任、重庆市高危妊娠诊治中心、重庆市产前诊断中心和重庆市胎儿医学中心主任，“中国-加拿大-新西兰联合母胎医学实验室”主任。</div>
                     </div>
                     <div class="docotrimgscorll">
                         <div class="leftbutton"></div>
                         <div id="imgscorll">
                             <ul>
-                                <li><a>
+                                <%foreach (System.Data.DataRow drt in TeamList.Rows)
+                                  {%>
+                                      <li><a onclick="ShowTeamInfo(this);" name="<%=drt["Name"] %>" ImgUrl="<%=drt["ImgUrl"] %>" Position="<%=drt["Position"] %>" Description="<%=drt["Description"].ToString().Replace(" ","&nbsp;") %>" >
+                                    <img src="<%=drt["ImgUrl"] %>" /></a></li>
+                                  <%} %>
+                                <%--<li><a>
                                     <img src="/Image/doctor_2.jpg" /></a></li>
                                 <li><a>
                                     <img src="/Image/doctor_1.jpg" /></a></li>
@@ -169,7 +200,7 @@
                                 <li><a>
                                     <img src="/Image/doctor_1.jpg" /></a></li>
                                 <li><a>
-                                    <img src="/Image/doctor_2.jpg" /></a></li>
+                                    <img src="/Image/doctor_2.jpg" /></a></li>--%>
                             </ul>
                         </div>
                         <div class="rightbutton"></div>

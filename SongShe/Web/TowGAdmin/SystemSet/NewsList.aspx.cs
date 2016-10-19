@@ -45,7 +45,7 @@ namespace Maticsoft.Web.TowGAdmin.SystemSet
                 page = new DwzPageParam(Context);
                 page.totalCount = count;
             }
-            dt = new Maticsoft.BLL.News().GetListByPage("", "KeyID desc", (page.pageNum - 1) * page.numPerPage + 1, page.pageNum * page.numPerPage).Tables[0];
+            dt = new Maticsoft.BLL.News().GetListByPage("", "Sort desc,EditTime desc", (page.pageNum - 1) * page.numPerPage + 1, page.pageNum * page.numPerPage).Tables[0];
         }
     }
 }

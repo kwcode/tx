@@ -10,9 +10,6 @@
     <title></title>
     <link href="/CSS/master.css" rel="stylesheet" />
     <script src="/UserJs/jquery-1.11.3.min.js"></script>
-    <style>
-        
-    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script>

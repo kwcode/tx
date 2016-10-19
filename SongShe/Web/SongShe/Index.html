@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery多重图片无限循环动画效果 - 站长素材</title>
+    <title>颂玺母婴</title>
     <script src="/UserJs/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="/UserJs/jwscrollloop.js"></script>
+    <script src="/SongShe/JS/JavaScript1.js"></script>
     <style type="text/css">
         * {
-            margin:0px;
-            padding:0px;
+            margin: 0px;
+            padding: 0px;
         }
+
         .htmleaf-container {
             margin: 0 auto;
             overflow: hidden;
@@ -22,6 +24,7 @@
             left: 0px;
             right: 0px;
         }
+
         .demo2 {
             width: 100%;
             height: 100%;
@@ -64,28 +67,145 @@
             display: block;
             cursor: pointer;
         }
+
+
+        html {
+	overflow-y: scroll;
+}
+ul {
+	list-style: none;
+}
+a, a:link, a:visited, a:hover, a:active, a:focus {
+	outline:none;
+	text-decoration: none;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+	cursor: pointer;
+}
+html, body {
+	height:100%;
+}
+body { position:relative; background:#eee;}
+
+.kwicks {
+	display: block;
+	list-style-type: none;
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.kwicks > * {
+	display: block;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+.kwicks.kwicks-processed > * {
+	margin: 0;
+	position: absolute;
+}
+.kwicks-horizontal > * {
+	float: left;
+}
+.kwicks-horizontal > :first-child {
+	margin-left: 0;
+}
+.kwicks-vertical > :first-child {
+	margin-top: 0;
+}
+
+.kwicks {
+	position:relative;
+	float:left;
+	width: 400px;
+	height: 100%;
+}
+.kwicks > li {
+	height: 100%;
+}
+#panel-1 {
+	background-image:url(/Image/leftimg_1.png);
+	background-size:cover;
+	background-position:bottom;
+}
+#panel-2 {
+	background-image:url(/Image/leftimg_2.png);
+	background-size:cover;
+	background-position:bottom;
+}
+#panel-1 img {
+	position:absolute;
+	top: 35%;
+	left:5%;
+	width:90%;
+	height:auto;
+}
+#panel-2 img {
+	position:absolute;
+	top: 55%;
+	left:5%;
+	width:90%;
+	height:auto;
+}
     </style>
     <script>
         $(function () {
-            var imgWid = 0;
-            var imgHei = 0; //变量初始化
-            var big = 1.5;//放大倍数
-            $(".leftdiv a").hover(function () {
-                $(this).find(".leftbackimg img").stop(true, true);
-                var imgWid2 = 0; var imgHei2 = 0;//局部变量
-                imgWid = $(this).find(".leftbackimg img").width();
-                imgHei = $(this).find("img").height();
-                imgWid2 = imgWid * big;
-                imgHei2 = imgHei * big;
-                $(this).find(".leftbackimg img").animate({ "width": imgWid2, "height": imgHei2 });
-            }, function () { $(this).find(".leftbackimg img").stop().animate({ "width": imgWid, "height": imgHei }); });
-            $("#divdemo2").css("margin-left", $("#divdemo1").width())
-        })
+            $('.kwicks').kwicks({
+                maxSize: '60%',
+                behavior: 'menu'
+            });
+
+            //var imgWid = 0;
+            //var imgHei = 0; //变量初始化
+            //var big = 1.5;//放大倍数
+            //$(".leftdiv a").hover(function () {
+            //    //alert($(this).find(".leftbackimg img").attr("src"));
+            //    $(this).find(".leftbackimg img").stop(true, true);
+            //    var imgWid2 = 0; var imgHei2 = 0;//局部变量
+            //    imgWid = $(this).find("img").width();
+            //    imgHei = $(this).find("img").height();
+            //    imgWid2 = imgWid * big;
+            //    imgHei2 = imgHei * big;
+            //    $(this).find(".leftbackimg img").animate({ "width": imgWid2, "height": imgHei2 });
+            //}, function () { $(this).find(".leftbackimg img").stop().animate({ "width": imgWid, "height": imgHei }); });
+            $("#divdemo2").css("margin-left", $("#ul1").width());
+
+            var rightvalue = ($("#divdemo2").width() - $("#ul1").width() - 350) * 0.75;
+            if (rightvalue <= 325)
+                rightvalue = 325;
+            var rightvalue1 = ($("#ul1").height() - 150) * 0.5;
+            
+            if (rightvalue1 < 300)
+                rightvalue1 = 300;
+            $("#dc1_03").css("left", rightvalue);
+            $("#dc1_03").css("top", rightvalue1);
+            $("#divdemo2").css("margin-left", $("#ul1").width());
+
+            $("#dp1").scrollLoop({ 'time': 3000, 'offsetX': 100, 'deltaX': rightvalue + 5, 'offsetY': 550, 'deltaY': rightvalue1 + 50, 'play_count': 1 });
+            $("#dc1_02").scrollLoop({ 'time': 3000, 'offsetX': rightvalue+160, 'deltaX': rightvalue -60, 'offsetY': 50, 'deltaY': rightvalue1 , 'play_count': 1 });
+
+            setTimeout(function () {
+                $("#dp1").fadeOut(1000);
+                $("#dc1_02").fadeOut(1000);
+                setTimeout(function () {
+                    $("#dc1_03").fadeToggle(1000);
+                }, 1100)
+            }, 3000)
+        });
     </script>
 </head>
 <body>
     <div class="htmleaf-container">
-        <div id="divdemo1" class="leftdiv">
+        <ul id="ul1" class="kwicks kwicks-horizontal">
+            <li id='panel-1'><a href="/SongShe/InfantCare.aspx"><img src="/Image/leftimgfont_1.png"></a></li>
+            <li id='panel-2'><a href="/SongShe/SongSheIndex.aspx"><img src="/Image/leftimgfont_2.png"></a></li>
+        </ul>
+        <!--<div id="divdemo1" class="leftdiv">
+            
             <a href="/SongShe/InfantCare.aspx">
                 <div class="leftbackimg"><img alt="" src="/Image/leftimg_1.png" /></div>
                 <div class="leftfontimg"><img alt="" src="/Image/leftimgfont_1.png" /></div>
@@ -94,7 +214,7 @@
                 <div class="leftbackimg"><img alt="" src="/Image/leftimg_2.png" /></div>
                 <div class="leftfontimg"><img alt="" src="/Image/leftimgfont_2.png" /></div>
             </a>
-        </div>
+        </div>-->
         <div id="divdemo2" class="demo2" style="">
             <img id="dp1" alt="" src="/Image/dp1.png" width="100" height="100" />
             <img id="dc1_02" alt="" src="/Image/dp2.png" width="100" height="100" />
@@ -102,19 +222,29 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(function () {
-            $("#dp1").scrollLoop({ 'time': 3000, 'offsetX': 100, 'deltaX': 335, 'offsetY': 550, 'deltaY': 305, 'play_count': 1 });
-            $("#dc1_02").scrollLoop({ 'time': 3000, 'offsetX': 600, 'deltaX': 300, 'offsetY': 50, 'deltaY': 280, 'play_count': 1 });
-            setTimeout(function () {
-                $("#dp1").stop();
-                $("#dc1_02").stop();
-                $("#dp1").fadeOut(1000);
-                $("#dc1_02").fadeOut(1000);
-                setTimeout(function () {
-                    $("#dc1_03").fadeToggle(800);
-                }, 1000)
-            }, 3000)
-        });
+        //$(function () {
+        //    var rightvalue = ($("#divdemo2").width() - $("#divdemo1").width() - 350) * 0.75;
+        //    if (rightvalue <= 325)
+        //        rightvalue = 325;
+        //    var rightvalue1 = ($("#divdemo1").height() - 150) * 0.5;
+        //    //alert(rightvalue1);
+        //    if (rightvalue1 < 300)
+        //        rightvalue1 = 300;
+        //    $("#dc1_03").css("left", rightvalue);
+        //    $("#dc1_03").css("top", rightvalue1);
+        //    $("#divdemo2").css("margin-left", $("#divdemo1").width());
+        //    //$("#dc1").scrollLoop();
+        //    $("#dp1").scrollLoop({ 'time': 3000, 'offsetX': 100, 'deltaX': rightvalue + 200, 'offsetY': 550, 'deltaY': rightvalue1 + 15, 'play_count': 1 });
+        //    $("#dc1_02").scrollLoop({ 'time': 3000, 'offsetX': $("#divdemo2").width() - $("#divdemo1").width() - 100, 'deltaX': rightvalue - 30, 'offsetY': 50, 'deltaY': rightvalue1 - 40, 'play_count': 1 });
+        //    //$("#dp1").scrollLoop({ 'time': 10000, 'offsetX': -200, 'deltaX': 800, 'offsetY': 500, 'deltaY': 300 });
+        //    setTimeout(function () {
+        //        //$("#dp1").fadeOut(1000);
+        //        //$("#dc1_02").fadeOut(1000);
+        //        //setTimeout(function () {
+        //        //    $("#dc1_03").fadeToggle(1000);
+        //        //}, 1100)
+        //    }, 3000)
+        //});
     </script>
 </body>
 </html>

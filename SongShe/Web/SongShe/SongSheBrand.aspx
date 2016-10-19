@@ -6,17 +6,17 @@
         $(function () {
             $(".nav li.linav").eq(0).find(".parentnav").addClass("currenta");
 
-            
+
         });
 
-        
+
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bigimg">
         <%pc = PageContentList.Where(p => p.KeyID == 1).FirstOrDefault(); %>
         <img src="<%=pc==null?"":pc.ImgUrl %>" onerror="this.src='/Image/scorll_1.jpg'" />
-        <div class="bigimgtext" <%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"style='display:none;'":"" %> ><%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"":pc.Remark %> </div>
+        <div class="bigimgtext" <%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"style='display:none;'":"" %>><%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"":pc.Remark %> </div>
     </div>
     <div class="pagecontent">
         <div id="brandintroduct" class="brandintroduct">
@@ -38,8 +38,33 @@
             </div>
             <div class="doctorlist">
                 <ul>
+                    <%foreach (System.Data.DataRow dr in TeamList.Rows)
+                      {%>
                     <li>
-                        <div class="doctorimg"><img src="/Image/doctor_1.jpg" /></div>
+                        <div class="doctorimg">
+                            <img src="<%=dr["ImgUrl"] %>" /></div>
+                        <div class="doctorinfo">
+                            <div class="name"><%=dr["Name"] %></div>
+                            <div class="job" style="font-size:20px;"><%=dr["Position"] %></div>
+                            <div class="descript"><%=dr["Description"].ToString().Replace(" ","&nbsp;") %></div>
+                        </div>
+                    </li>
+                    <%} %>
+                    <%for (int i = 0; i < TeamList.Rows.Count; i++)
+                      {%>
+                    <li>
+                        <div class="doctorimg">
+                            <img src="<%=TeamList.Rows[i]["ImgUrl"] %>" /></div>
+                        <div class="doctorinfo">
+                            <div class="name"><%=TeamList.Rows[i]["Name"] %></div>
+                            <div class="job" style="font-size:20px;"><%=TeamList.Rows[i]["Position"] %></div>
+                            <div class="descript"><%=TeamList.Rows[i]["Description"].ToString().Replace(" ","&nbsp;") %></div>
+                        </div>
+                    </li>
+                    <%} %>
+                    <%--<li>
+                        <div class="doctorimg">
+                            <img src="/Image/doctor_1.jpg" /></div>
                         <div class="doctorinfo">
                             <div class="name">漆洪波</div>
                             <div class="job">教授、医学博士、博士生导师</div>
@@ -47,7 +72,8 @@
                         </div>
                     </li>
                     <li>
-                        <div class="doctorimg"><img src="/Image/doctor_2.jpg" /></div>
+                        <div class="doctorimg">
+                            <img src="/Image/doctor_2.jpg" /></div>
                         <div class="doctorinfo">
                             <div class="name">漆洪波</div>
                             <div class="job">教授、医学博士、博士生导师</div>
@@ -55,7 +81,8 @@
                         </div>
                     </li>
                     <li>
-                        <div class="doctorimg"><img src="/Image/doctor_2.jpg" /></div>
+                        <div class="doctorimg">
+                            <img src="/Image/doctor_2.jpg" /></div>
                         <div class="doctorinfo">
                             <div class="name">漆洪波</div>
                             <div class="job">教授、医学博士、博士生导师</div>
@@ -63,13 +90,14 @@
                         </div>
                     </li>
                     <li>
-                        <div class="doctorimg"><img src="/Image/doctor_1.jpg" /></div>
+                        <div class="doctorimg">
+                            <img src="/Image/doctor_1.jpg" /></div>
                         <div class="doctorinfo">
                             <div class="name">漆洪波</div>
                             <div class="job">教授、医学博士、博士生导师</div>
                             <div class="descript">重庆医科大学附属第一医院妇产科主任、重庆市高危妊娠诊治中心、重庆市产前诊断中心和重庆市胎儿医学中心主任，“中国-加拿大-新西兰联合母胎医学实验室”主任。</div>
                         </div>
-                    </li>
+                    </li>--%>
                 </ul>
             </div>
             <div class="introductimg">
@@ -77,7 +105,7 @@
                 <%--<img src="/Image/h_10.jpg" />--%>
             </div>
         </div>
-        <div style="clear:both;"></div>
+        <div style="clear: both;"></div>
         <div id="serviceteam" class="serviceteam">
             <%pc = PageContentList.Where(p => p.KeyID == 9).FirstOrDefault(); %>
             <div class="title"><span><%=pc==null?"服务团队":pc.Title %></span><label><%=pc==null?"SERVICE TEAM":pc.Remark %></label></div>

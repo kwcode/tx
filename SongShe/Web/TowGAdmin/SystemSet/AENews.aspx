@@ -23,8 +23,6 @@
             }
         }
         function UploadImgUrl() {
-            alert("start");
-
             $("#formUploadImg").ajaxSubmit({
                 type: "post",
                 url: "/TowGAdmin/Ajax/UploadImgHandler.ashx",
@@ -62,6 +60,12 @@
                         <dt>新闻标题：</dt>
                         <dd>
                             <input name="Title" style="width: 200px;" class=" textInput" type="text" value="<%=News==null?"": News.Title %>" />
+                        </dd>
+                    </dl>
+                    <dl class="nowrap">
+                        <dt>新闻标题：</dt>
+                        <dd>
+                            <textarea name="Description" rows="4" cols="60" class="textInput" ><%=News==null?"": News.Description %></textarea>
                         </dd>
                     </dl>
                     <dl class="nowrap">
