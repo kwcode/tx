@@ -1,0 +1,275 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="songshe.master.cs" Inherits="Maticsoft.Web.SongShe.songshe" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title></title>
+    <link href="/CSS/master.css" rel="stylesheet" />
+    <script src="/UserJs/jquery-1.11.3.min.js"></script>
+    <style>
+        
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        function navover(obj) {
+            $(obj).find(".childnav").show();
+            $(obj).find(".childnavul").show();
+        }
+        function navout(obj) {
+            $(obj).find(".childnav").hide();
+            $(obj).find(".childnavul").hide();
+        }
+        //返回顶部
+        function returntop() {
+            $("html,body").animate({ scrollTop: 0 }, 500);
+        }
+        var windowheight = $(window).height(); //浏览器高度
+        $(function () {
+            //返回顶部
+            $(window).bind("scroll", function () {
+                var scrollheight = $(document).scrollTop() + windowheight - 50;
+                if (scrollheight > 900) {
+                    $(".returntop").show();
+                }
+                else {
+                    $(".returntop").hide();
+                }
+            });
+            $("#dhzx").hover(function () {
+                $(this).find(".zxtelphone").stop(true, true);
+                $(this).find(".zxtelphone").animate({ 'width': 220 }, 'fast');
+            }, function () {
+                $(this).find(".zxtelphone").animate({ 'width': 0 }, 'fast');
+            });
+            $("#zxzx").hover(function () {
+                $(this).find("img").stop(true, true);
+                $(this).find("img").animate({ "width": 140, "height": 140 });
+                $(".leftzx").css("padding-left", "10px");
+            }, function () {
+                $(this).find("img").stop().animate({ "width": 80, "height": 80 });
+                $(".leftzx").css("padding-left", "0px");
+            });
+
+            var width = $(".bigimg").width();
+            if (width > 0) {
+                $(".bigimg").height(width / 2);
+                $(".bigimg img").height(width / 2);
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="head">
+                <div class="headcontent">
+                    <div class="logo">
+                        <a href="/SongShe/SongSheIndex.aspx">
+                            <img src="/Image/logo.png" /></a>
+                    </div>
+                    <div class="nav">
+                        <ul>
+                            <li class="linav" onmouseover="navover(this);" onmouseout="navout(this);">
+                                <a class="parentnav" href="/SongShe/SongSheBrand.aspx">
+                                    <% pc = PageContentList.Where(p => p.KeyID == 1).FirstOrDefault(); %>
+                                    <div><%=(pc==null||pc.Title=="")?"颂玺品牌":pc.Title %> <%--颂玺品牌--%></div>
+                                    <span><%=(pc==null||pc.Detail=="")?"Brand":pc.Detail %><%--Brand--%></span>
+                                </a>
+                                <div class="childnav"></div>
+                                <ul class="childnavul">
+                                    <li>
+                                        <a href="/SongShe/SongSheBrand.aspx#brandintroduct">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 7).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"品牌介绍":pc.Title %><%--品牌介绍--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"颂玺母婴照护中心，是重庆力杨集团与台湾母婴照护知名连锁品牌机构合作共同打造的两岸跨界健康服务产业项目，具备中国妇产科最专业权威的医学团队资源、专业技术技能与硬件设备，是重庆市唯一拥有母婴产后四大照护体系的中心会所。":pc.Detail %><%--颂玺母婴照护中心，是重庆力杨集团与台湾母婴照护知名连锁品牌机构合作共同打造的两岸跨界健康服务产业项目，具备中国妇产科最专业权威的医学团队资源、专业技术技能与硬件设备，是重庆市唯一拥有母婴产后四大照护体系的中心会所。--%></span></div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/SongShe/SongSheBrand.aspx#doctorteam">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 8).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"医疗团队":pc.Title %><%--医疗团队--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"拥有重庆市三甲医院强大的医疗团队支持，以及融入现代医学、心理学、营养学、产科及新生儿科护理学等综合学科的知识，引进台湾专业的医学母婴照护模式管理，让每位妈妈及宝宝都能获得最优质的照顾及服务。":pc.Detail %><%--拥有重庆市三甲医院强大的医疗团队支持，以及融入现代医学、心理学、营养学、产科及新生儿科护理学等综合学科的知识，引进台湾专业的医学母婴照护模式管理，让每位妈妈及宝宝都能获得最优质的照顾及服务。--%></span></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/SongShe/SongSheBrand.aspx#serviceteam">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 9).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"服务团队":pc.Title %><%--服务团队--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"专业资深的护理团队，经验丰富的照护团队，以及中医师，营业师，高级泌乳顾问，产后修复师，让您在月子修养期间得到无微不至的照护。":pc.Detail %><%--专业资深的护理团队，经验丰富的照护团队，以及中医师，营业师，高级泌乳顾问，产后修复师，让您在月子修养期间得到无微不至的照护。--%></span></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/SongShe/JoinUs.aspx">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 10).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"加入我们":pc.Title %><%--加入我们--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"寻找有爱之人。":pc.Detail %><%--寻找有爱之人。--%></span></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="linav" onmouseover="navover(this);" onmouseout="navout(this);">
+                                <a class="parentnav" href="/SongShe/InfantCare.aspx">
+                                    <% pc = PageContentList.Where(p => p.KeyID == 2).FirstOrDefault(); %>
+                                    <div><%=(pc==null||pc.Title=="")?"母婴照护":pc.Title %> <%--母婴照护--%></div>
+                                    <span><%=(pc==null||pc.Detail=="")?"infant care":pc.Detail %><%--infant care--%></span>
+                                </a>
+                                <div class="childnav"></div>
+                                <ul class="childnavul">
+                                    <li>
+                                        <a href="/SongShe/InfantCare.aspx#motherzh">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 11).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"妈妈照护":pc.Title %><%--妈妈照护--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"为妈妈提供一站式产后照护服务以及情绪管理，产后修复。":pc.Detail %><%--为妈妈提供一站式产后照护服务以及情绪管理，产后修复。--%></span></div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/SongShe/InfantCare.aspx#babyhl">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 12).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"宝宝护理":pc.Title %><%--宝宝护理--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"全方位观察宝宝，用科学的专业医疗护理深入到宝宝每一天的成长。":pc.Detail %><%--全方位观察宝宝，用科学的专业医疗护理深入到宝宝每一天的成长。--%></span></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/SongShe/InfantCare.aspx#xrtn">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 13).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"小儿推拿":pc.Title %><%--小儿推拿--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"通过对宝宝的中医推拿，预防宝宝生病，促进宝宝身体健康成长。":pc.Detail %><%--通过对宝宝的中医推拿，预防宝宝生病，促进宝宝身体健康成长。--%></span></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/SongShe/InfantCare.aspx#motherjs">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 14).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"妈妈教室":pc.Title %><%--妈妈教室--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"为妈妈提供各类课程与指导，轻松获得新生儿照护以及产后保健知识。":pc.Detail %><%--为妈妈提供各类课程与指导，轻松获得新生儿照护以及产后保健知识。--%></span></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="linav" onmouseover="navover(this);" onmouseout="navout(this);">
+                                <a class="parentnav" href="/SongShe/SongSheEnvironment.aspx">
+                                    <% pc = PageContentList.Where(p => p.KeyID == 3).FirstOrDefault(); %>
+                                    <div><%=(pc==null||pc.Title=="")?"颂玺环境":pc.Title %> <%--颂玺环境--%></div>
+                                    <span><%=(pc==null||pc.Detail=="")?"Environment":pc.Detail %><%--Environment--%></span>
+                                </a>
+                                <div class="childnav"></div>
+                                <ul class="childnavul">
+                                    <li>
+                                        <a href="/SongShe/SongSheEnvironment.aspx#pthj">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 15).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"配套环境":pc.Title %><%--配套环境--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"隐身都市，离尘不离城，闹中取静，配套环境温馨私密，独立新风，除尘除菌，是您月子修养的最佳选择。":pc.Detail %><%--隐身都市，离尘不离城，闹中取静，配套环境温馨私密，独立新风，除尘除菌，是您月子修养的最佳选择。--%></span></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/SongShe/SongSheEnvironment.aspx#wztf">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 16).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"王子套房":pc.Title %><%--王子套房--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/SongShe/SongSheEnvironment.aspx#gztf">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 17).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"公主套房":pc.Title %><%--公主套房--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="linav" onmouseover="navover(this);" onmouseout="navout(this);">
+                                <a class="parentnav" href="/SongShe/MonthOfMeals.aspx">
+                                    <% pc = PageContentList.Where(p => p.KeyID == 4).FirstOrDefault(); %>
+                                    <div><%=(pc==null||pc.Title=="")?"月子膳食":pc.Title %> <%--月子膳食--%></div>
+                                    <span><%=(pc==null||pc.Detail=="")?"Month of meals":pc.Detail %><%--Month of meals--%></span>
+                                </a>
+                                <div class="childnav"></div>
+                                <ul class="childnavul">
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="linav" onmouseover="navover(this);" onmouseout="navout(this);">
+                                <a class="parentnav" href="/SongShe/NewsInfo.aspx">
+                                    <% pc = PageContentList.Where(p => p.KeyID == 5).FirstOrDefault(); %>
+                                    <div><%=(pc==null||pc.Title=="")?"新闻中心":pc.Title %> <%--新闻中心--%></div>
+                                    <span><%=(pc==null||pc.Detail=="")?"News Center":pc.Detail %><%--News Center--%></span>
+                                </a>
+                                <div class="childnav"></div>
+                                <ul class="childnavul">
+                                    <li>
+                                        <a href="/SongShe/NewsInfo.aspx#newzx">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 18).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"最新资讯":pc.Title %><%--最新资讯--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/SongShe/NewsInfo.aspx#qwfb">
+                                            <% pc = PageContentList.Where(p => p.KeyID == 19).FirstOrDefault(); %>
+                                            <span><%=(pc==null||pc.Title=="")?"权威发布":pc.Title %><%--权威发布--%></span>
+                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="linav" onmouseover="navover(this);" onmouseout="navout(this);">
+                                <a class="parentnav" href="/SongShe/UserCenter.aspx">
+                                    <% pc = PageContentList.Where(p => p.KeyID == 6).FirstOrDefault(); %>
+                                    <div><%=(pc==null||pc.Title=="")?"会员中心":pc.Title %> <%--会员中心--%></div>
+                                    <span><%=(pc==null||pc.Detail=="")?"Member Center":pc.Detail %><%--Member Center--%></span>
+                                </a>
+                                <div class="childnav"></div>
+                                <ul class="childnavul">
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <%--<div class="telphone">400XXXXXXXXX</div>--%>
+                </div>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="footer">
+            </div>
+            <div class="foot">
+                <div class="footcontent">
+                    <div class="elogo">
+                        <img src="/Image/logo_1.png" /></div>
+                    <div class="telphone">
+                        <div style="font-size: 20px;">咨询热线：400XXXXXXX</div>
+                        <div>重庆市渝中区时代天街时代汇13号楼17层</div>
+                    </div>
+                    <div class="contact">
+                        <img src="/Image/qq.png" />
+                        <img src="/Image/wx.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="leftzx">
+                <a id="dhzx">
+                    <img src="/Image/dhyy.png" />
+                    <div class="zxtelphone">400XXXXXXXXX</div>
+                </a>
+                <a id="zxzx">
+                    <%--<img src="/Image/zxzx.png" />--%>
+                    <img onclick="javascript:window.open('http://wpa.qq.com/msgrd?v=3&uin=133144954&site=qq&menu=yes');" src="/Image/zxzx.png"/>
+                </a>
+                <a>
+                    <img src="/Image/ewm.jpg" /></a>
+                <div>扫一扫，有惊喜</div>
+            </div>
+            <div class="returntop" onclick="returntop();">
+                <img src="/Image/fh.png" onmouseover="this.src='/Image/fhdb.png'" onmouseout="this.src='/Image/fh.png'" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
