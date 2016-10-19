@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2016/10/2 0:21:24   N/A    初版
+* V0.01  2016/10/18 21:39:06   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -62,9 +62,9 @@ namespace Maticsoft.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into News(");
-			strSql.Append("ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl)");
+			strSql.Append("ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl,Description)");
 			strSql.Append(" values (");
-			strSql.Append("@ManagerID,@AddTime,@TypeID,@TypeName,@Title,@Source,@Detail,@EditTime,@Status,@Sort,@ImgUrl)");
+			strSql.Append("@ManagerID,@AddTime,@TypeID,@TypeName,@Title,@Source,@Detail,@EditTime,@Status,@Sort,@ImgUrl,@Description)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@ManagerID", SqlDbType.Int,4),
@@ -77,7 +77,8 @@ namespace Maticsoft.DAL
 					new SqlParameter("@EditTime", SqlDbType.DateTime),
 					new SqlParameter("@Status", SqlDbType.Int,4),
 					new SqlParameter("@Sort", SqlDbType.Int,4),
-					new SqlParameter("@ImgUrl", SqlDbType.NVarChar,200)};
+					new SqlParameter("@ImgUrl", SqlDbType.NVarChar,200),
+					new SqlParameter("@Description", SqlDbType.NVarChar,200)};
 			parameters[0].Value = model.ManagerID;
 			parameters[1].Value = model.AddTime;
 			parameters[2].Value = model.TypeID;
@@ -89,6 +90,7 @@ namespace Maticsoft.DAL
 			parameters[8].Value = model.Status;
 			parameters[9].Value = model.Sort;
 			parameters[10].Value = model.ImgUrl;
+			parameters[11].Value = model.Description;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -117,7 +119,8 @@ namespace Maticsoft.DAL
 			strSql.Append("EditTime=@EditTime,");
 			strSql.Append("Status=@Status,");
 			strSql.Append("Sort=@Sort,");
-			strSql.Append("ImgUrl=@ImgUrl");
+			strSql.Append("ImgUrl=@ImgUrl,");
+			strSql.Append("Description=@Description");
 			strSql.Append(" where KeyID=@KeyID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@ManagerID", SqlDbType.Int,4),
@@ -131,6 +134,7 @@ namespace Maticsoft.DAL
 					new SqlParameter("@Status", SqlDbType.Int,4),
 					new SqlParameter("@Sort", SqlDbType.Int,4),
 					new SqlParameter("@ImgUrl", SqlDbType.NVarChar,200),
+					new SqlParameter("@Description", SqlDbType.NVarChar,200),
 					new SqlParameter("@KeyID", SqlDbType.Int,4)};
 			parameters[0].Value = model.ManagerID;
 			parameters[1].Value = model.AddTime;
@@ -143,7 +147,8 @@ namespace Maticsoft.DAL
 			parameters[8].Value = model.Status;
 			parameters[9].Value = model.Sort;
 			parameters[10].Value = model.ImgUrl;
-			parameters[11].Value = model.KeyID;
+			parameters[11].Value = model.Description;
+			parameters[12].Value = model.KeyID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -207,7 +212,7 @@ namespace Maticsoft.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 KeyID,ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl from News ");
+			strSql.Append("select  top 1 KeyID,ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl,Description from News ");
 			strSql.Append(" where KeyID=@KeyID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@KeyID", SqlDbType.Int,4)
@@ -283,6 +288,10 @@ namespace Maticsoft.DAL
 				{
 					model.ImgUrl=row["ImgUrl"].ToString();
 				}
+				if(row["Description"]!=null)
+				{
+					model.Description=row["Description"].ToString();
+				}
 			}
 			return model;
 		}
@@ -293,7 +302,7 @@ namespace Maticsoft.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select KeyID,ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl ");
+			strSql.Append("select KeyID,ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl,Description ");
 			strSql.Append(" FROM News ");
 			if(strWhere.Trim()!="")
 			{
@@ -313,7 +322,7 @@ namespace Maticsoft.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" KeyID,ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl ");
+			strSql.Append(" KeyID,ManagerID,AddTime,TypeID,TypeName,Title,Source,Detail,EditTime,Status,Sort,ImgUrl,Description ");
 			strSql.Append(" FROM News ");
 			if(strWhere.Trim()!="")
 			{

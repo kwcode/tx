@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2016/10/2 0:21:24   N/A    初版
+* V0.01  2016/10/18 21:39:05   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -38,6 +38,7 @@ namespace Maticsoft.Model
 		private int _status=1;
 		private int _sort=0;
 		private string _imgurl;
+		private string _description;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -133,6 +134,14 @@ namespace Maticsoft.Model
 		{
 			set{ _imgurl=value;}
 			get{return _imgurl;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public string Description
+		{
+			set{ _description=value;}
+			get{return _description;}
 		}
 		#endregion Model
 
