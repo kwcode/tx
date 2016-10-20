@@ -202,6 +202,7 @@
     <Content Include="SongShe\InfantCare.aspx" />
     <Content Include="CSS\InfantCare.css" />
     <Content Include="SongShe\JoinUs.aspx" />
+    <Content Include="SongShe\JS\JavaScript1.js" />
     <Content Include="SongShe\JS\SongSheBrand.js" />
     <Content Include="SongShe\JS\SongSheIndex.js" />
     <Content Include="SongShe\MonthOfMeals.aspx" />
@@ -1083,7 +1084,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58306</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:57957/</IISUrl>
+          <IISUrl>http://localhost:57955/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -10,10 +10,10 @@
         $(function () {
             var width = $("#focus").width();
             if (width > 0) {
-                $("#focus").height(width / 2);
-                $("#focus li").height(width / 2);
-                $("#focus a").height(width / 2);
-                $("#focus img").height(width / 2);
+                $("#focus").height(width / 3);
+                $("#focus li").height(width / 3);
+                $("#focus a").height(width / 3);
+                $("#focus img").height(width / 3);
             }
             //imgscorll
             if ($("#imgscorll a").length > 0)
@@ -132,31 +132,31 @@
             <div class="muzhdiv">
                 <ul>
                     <li>
-                        <a>
+                        <a href="/SongShe/InfantCare.aspx#motherzh">
                             <img src="/Image/mmzh.png" /></a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/SongShe/InfantCare.aspx#babyhl">
                             <img src="/Image/bbzh.png" /></a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/SongShe/MonthOfMeals.aspx#MonthOfMeals">
                             <img src="/Image/yzss.png" /></a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/SongShe/InfantCare.aspx#xrtn">
                             <img src="/Image/xrtn.png" /></a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/SongShe/InfantCare.aspx#motherzh">
                             <img src="/Image/chxf.png" /></a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/SongShe/InfantCare.aspx#motherjs">
                             <img src="/Image/mmjs.png" /></a>
                     </li>
                     <li>
-                        <a>
+                        <a href="/SongShe/UserCenter.aspx#UserCenter">
                             <img src="/Image/hyzx.png" /></a>
                     </li>
                 </ul>

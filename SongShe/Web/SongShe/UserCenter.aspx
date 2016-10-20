@@ -16,13 +16,13 @@
         }
 
             .title span {
-                font-size: 30px;
+                font-size: 21px;
                 font-weight: bold;
                 font-family: KaiTi;
             }
 
             .title label {
-                margin-left: 15px;
+                margin-left: 12px;
                 font-size: 16px;
             }
 
@@ -39,7 +39,7 @@
         <img src="<%=pc==null?"":pc.ImgUrl %>" onerror="this.src='/Image/scorll_6.jpg'" />
         <div class="bigimgtext" <%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"style='display:none;'":"" %>><%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"":pc.Remark %> </div>
     </div>
-    <div class="pagecontent">
+    <div id="UserCenter" class="pagecontent">
         <div class="membercardtype">
             <%pc = PageContentList.Where(p => p.KeyID == 39).FirstOrDefault(); %>
             <div class="title"><span><%=pc==null?"会员卡类别":pc.Title %></span><label><%=pc==null?"MEMBERCARDTRPE":pc.Remark %></label></div>

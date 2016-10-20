@@ -5,7 +5,8 @@
 }
 
 body {
-    font-family: 'Microsoft YaHei';
+    /*font-family: 'Microsoft YaHei';*/
+        font-family: 'SimSun';
     font-size: 12px;
     min-height: 100%;
     position: absolute;

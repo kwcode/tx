@@ -46,7 +46,7 @@
                 height: 100%;
                 display: block;
                 float: left;
-                min-width: 200px;
+                min-width: 400px;
             }
 
         .leftfontimg {
@@ -121,7 +121,7 @@ body { position:relative; background:#eee;}
 .kwicks {
 	position:relative;
 	float:left;
-	width: 400px;
+	width: 32%;
 	height: 100%;
 }
 .kwicks > li {
@@ -139,25 +139,27 @@ body { position:relative; background:#eee;}
 }
 #panel-1 img {
 	position:absolute;
-	top: 35%;
+	top: 50%;
 	left:5%;
 	width:90%;
 	height:auto;
 }
 #panel-2 img {
 	position:absolute;
-	top: 55%;
+	top: 50%;
 	left:5%;
 	width:90%;
 	height:auto;
-}
+}
+
     </style>
     <script>
         $(function () {
             $('.kwicks').kwicks({
                 maxSize: '60%',
                 behavior: 'menu'
-            });
+            });
+
 
             //var imgWid = 0;
             //var imgHei = 0; //变量初始化
@@ -177,23 +179,22 @@ body { position:relative; background:#eee;}
             var rightvalue = ($("#divdemo2").width() - $("#ul1").width() - 350) * 0.75;
             if (rightvalue <= 325)
                 rightvalue = 325;
-            var rightvalue1 = ($("#ul1").height() - 150) * 0.5;
-            
+            var rightvalue1 = ($("#ul1").height() - 250) * 0.5;
             if (rightvalue1 < 300)
                 rightvalue1 = 300;
-            $("#dc1_03").css("left", rightvalue);
-            $("#dc1_03").css("top", rightvalue1);
+            $("#dc1_03").css("left", rightvalue-50);
+            $("#dc1_03").css("top", rightvalue1 + 25);
             $("#divdemo2").css("margin-left", $("#ul1").width());
 
             $("#dp1").scrollLoop({ 'time': 3000, 'offsetX': 100, 'deltaX': rightvalue + 5, 'offsetY': 550, 'deltaY': rightvalue1 + 50, 'play_count': 1 });
             $("#dc1_02").scrollLoop({ 'time': 3000, 'offsetX': rightvalue+160, 'deltaX': rightvalue -60, 'offsetY': 50, 'deltaY': rightvalue1 , 'play_count': 1 });
 
             setTimeout(function () {
-                $("#dp1").fadeOut(1000);
-                $("#dc1_02").fadeOut(1000);
-                setTimeout(function () {
+                //$("#dp1").fadeOut(1000);
+                //$("#dc1_02").fadeOut(1000);
+                //setTimeout(function () {
                     $("#dc1_03").fadeToggle(1000);
-                }, 1100)
+                //}, 1100)
             }, 3000)
         });
     </script>
@@ -201,8 +202,8 @@ body { position:relative; background:#eee;}
 <body>
     <div class="htmleaf-container">
         <ul id="ul1" class="kwicks kwicks-horizontal">
-            <li id='panel-1'><a href="/SongShe/InfantCare.aspx"><img src="/Image/leftimgfont_1.png"></a></li>
-            <li id='panel-2'><a href="/SongShe/SongSheIndex.aspx"><img src="/Image/leftimgfont_2.png"></a></li>
+            <li id='panel-1'><a href="/SongShe/SongSheIndex.aspx"><img src="/Image/leftimgfont_1.png"></a></li>
+            <li id='panel-2'><a href="javascript:void()"><img src="/Image/leftimgfont_2.png"></a></li>
         </ul>
         <!--<div id="divdemo1" class="leftdiv">
             
@@ -216,9 +217,9 @@ body { position:relative; background:#eee;}
             </a>
         </div>-->
         <div id="divdemo2" class="demo2" style="">
-            <img id="dp1" alt="" src="/Image/dp1.png" width="100" height="100" />
-            <img id="dc1_02" alt="" src="/Image/dp2.png" width="100" height="100" />
-            <img id="dc1_03" alt="" src="/Image/dp3.png" height="150" style="position: relative; left: 325px; top: 305px;display:none;" />
+            <img id="dp1" alt="" src="/Image/dp1.png" width="100" height="100" style="margin-top: 50px; " />
+            <img id="dc1_02" alt="" src="/Image/dp2.png" width="100" height="100" style="margin-top: 50px; " />
+            <img id="dc1_03" alt="" src="/Image/dp4.png" height="100" style="position: relative;display:none;" />
         </div>
     </div>
     <script type="text/javascript">

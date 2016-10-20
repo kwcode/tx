@@ -51,7 +51,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="bigimg">
+    <div class="bigimg" style="display:none;">
         <%pc = PageContentList.Where(p => p.KeyID == 5).FirstOrDefault(); %>
         <img src="<%=pc==null?"":pc.ImgUrl %>" onerror="this.src='/Image/scorll_5.jpg'" />
         <div class="bigimgtext" <%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"style='display:none;'":"" %>><%=(pc==null||string.IsNullOrWhiteSpace(pc.Remark))?"发现最新动态":pc.Remark %> </div>

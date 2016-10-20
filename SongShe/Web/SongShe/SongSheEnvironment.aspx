@@ -16,13 +16,13 @@
         }
 
             .title span {
-                font-size: 30px;
+                font-size: 21px;
                 font-weight: bold;
                 font-family: KaiTi;
             }
 
             .title label {
-                margin-left: 15px;
+                margin-left: 12px;
                 font-size: 16px;
             }
 
@@ -182,7 +182,7 @@
             <div class="tfimg"><img src="<%=pc==null?"":pc.ImgUrl %>" onerror="this.src='/Image/h_35.jpg'" /></div>
         </div>
         <div id="gztf" class="gztf">
-            <%pc = PageContentList.Where(p => p.KeyID == 16).FirstOrDefault(); %>
+            <%pc = PageContentList.Where(p => p.KeyID == 17).FirstOrDefault(); %>
             <div class="title"><span><%=pc==null?"公主套房":pc.Title %></span><label><%=pc==null?"PRINCESS SUITE":pc.Remark %></label></div>
             <%--图片尺寸建议：width:570px;height:540px;--%>
             <div class="tfimg"><img src="<%=pc==null?"":pc.ImgUrl %>" onerror="this.src='/Image/h_36.jpg'" /></div>
