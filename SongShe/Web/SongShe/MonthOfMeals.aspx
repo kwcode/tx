@@ -28,7 +28,6 @@
 
         .pagecontent li .descript {
             line-height: 30px;
-            font-size: 14px;
             margin-top: 20px;
             color: #898989;
             text-indent: 30px;

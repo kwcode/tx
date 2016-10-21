@@ -28,7 +28,6 @@
 
         .introduct, .environment .descript {
             line-height: 25px;
-            font-size: 14px;
             margin-top: 20px;
             color: #898989;
             text-indent: 30px;

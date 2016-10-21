@@ -47,7 +47,6 @@
                 overflow: hidden;
                 text-indent: 30px;
                 line-height: 25px;
-                font-size: 14px;
                 color: #898989;
                 text-indent: 30px;
             }
@@ -73,7 +72,6 @@
             .newslist li {
                 clear: both;
                 line-height: 25px;
-                font-size: 14px;
             }
 
                 .newslist li .newstitle {
