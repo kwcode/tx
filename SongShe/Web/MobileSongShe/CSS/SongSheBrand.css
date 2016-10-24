@@ -1,0 +1,94 @@
+﻿.pagecontent {
+    font-size:12px;
+    margin-top:40px;
+}
+.content {
+    padding:10px!important;
+}
+/***********通用标题样式*************/
+.title {
+    height: 40px;
+    line-height:40px;
+    border-bottom: 1px dotted #F09192;
+    width: 100%;
+    color: #F09192;
+    margin-top: 20px;
+    overflow: hidden;
+    text-align:center;
+}
+
+    .title span {
+        font-size: 21px;
+        font-weight: bold;
+        font-family: KaiTi;
+    }
+
+    .title label {
+        display: inline;
+        margin-left: 14px;
+        font-size: 12px;
+        display:none!important;
+    }
+
+.introduct {
+    line-height: 25px;
+    margin-top: 20px;
+    color: #898989;
+    text-indent: 30px;
+    width: 100%;
+}
+/**************品牌介绍***************/
+.introductimg {
+    text-align: center;
+}
+
+    .introductimg img {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+/************医疗团队**************/
+.doctorlist li .doctorimg {
+    float: left;
+}
+
+.doctorlist li {
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    border-bottom:1px dashed #ccc;
+    padding-bottom:15px;
+}
+
+    .doctorlist li .doctorimg img {
+        height: 130px;
+        width: 130px;
+    }
+
+    .doctorlist li .doctorinfo .name {
+        color: #898989;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .doctorlist li .doctorinfo .job {
+        font-size: 12px;
+        color: #ADADAD;
+        margin-top: 10px;
+    }
+
+    .doctorlist li .doctorinfo .descript {
+        color: #ADADAD;
+        line-height: 25px;
+        width: 90%;
+        margin-top: 10px;
+        height: 100px;
+        overflow: hidden;
+        height:75px;   
+    }
+
+    .doctorlist li .doctorinfo {
+        margin-left:10px;
+        width: 55%;
+        float: left;
+        overflow:hidden;
+    }

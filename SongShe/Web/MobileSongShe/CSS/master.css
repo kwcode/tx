@@ -1,0 +1,217 @@
+﻿@font-face {
+    font-family: '方正铁筋隶书简体'; /*字体名称*/
+    src: url('/MobileSongShe/CSS/方正铁筋隶书简体.ttf'); /*字体源文件*/
+}
+.ui-panel-wrapper {
+    background:white!important;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+label {
+    display:inline!important;
+}
+html, body {
+    font-size: 12px;
+    height: 100%;
+    text-shadow: none !important;
+}
+img {
+    border:none;
+}
+a {
+    font-weight: normal !important;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#pageone {
+    background: white !important;
+}
+
+.head {
+    background: white !important;
+    height: 55px;
+}
+
+.bar img {
+    height: 20px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.logo {
+    line-height:35px;
+    color:#43BCC5;
+    font-family: '方正铁筋隶书简体';
+    font-weight:normal;
+    text-shadow:none;
+    font-size:20px!important;
+}
+.logo img {
+    height: 35px;
+    margin-top: -2px;
+}
+.zixun {
+    margin-right:5px!important;
+}
+.zixun img {
+    height: 25px;
+    margin-top: 13px;
+}
+
+.zixun span {
+    position: relative;
+    color: #43BCC5;
+    font-weight: normal;
+    top: -6px;
+    font-size: 14px;
+}
+
+#leftnav {
+    background: #43BCC5;
+    color: white;
+}
+
+    #leftnav li a {
+        color: white;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 20px;
+        font-family: '方正铁筋隶书简体';
+        font-size: 20px;
+        text-shadow:none!important;
+    }
+
+    #leftnav .index {
+        font-size: 24px;
+        margin-bottom:  0px;
+    }
+
+    #leftnav .current {
+        background: white;
+        color: #43BCC5;
+        border-radius: 20px;
+    }
+
+    #leftnav .line {
+        border-bottom: 1px solid #DEF0F2;
+        margin-top: 30px;
+    }
+
+    #leftnav .lxphone img, #leftnav .lxaddress img {
+        height: 15px;
+    }
+
+    #leftnav .lxphone,#leftnav .lxaddress {
+        font-size:12px!important;
+        text-shadow:none!important;
+        margin-top:20px;
+        line-height:23px;
+    }    #leftnav .lxphone {
+        margin-top:30px;
+    }
+        #leftnav .lxphone div, #leftnav .lxaddress div {
+            float:left;
+        }
+        #leftnav .lxaddress .addressdetail,#leftnav .lxphone .phonedetail {
+            width:110px;
+            position:relative;
+            left:5px;
+            top:-4px;
+        }
+.foot {
+    background: white !important;
+    height: 50px;
+    line-height: 50px;
+}
+
+    .foot a {
+        text-decoration: none;
+        color: #42BCC7 !important;
+        font-weight: normal;
+        width: 31.5%;
+        display: inline-block;
+        text-align: center;
+        font-family: '方正铁筋隶书简体' !important;
+        font-size: 20px;
+    }
+
+
+
+.ui-panel {
+    width: 10em !important;
+}
+
+    .ui-panel.ui-panel-position-right {
+        width: 15em !important;
+    }
+
+    .ui-panel.ui-panel-closed {
+        width: 0 !important;
+    }
+
+.ui-panel-animate.ui-panel-position-left.ui-panel-display-overlay, .ui-panel-animate.ui-panel-position-left.ui-panel-display-push {
+    -webkit-transform: translate3d(-10em, 0, 0) !important;
+    -moz-transform: translate3d(-10em, 0, 0) !important;
+    transform: translate3d(-10em, 0, 0) !important;
+}
+
+.ui-panel-animate.ui-panel-position-right.ui-panel-display-overlay, .ui-panel-animate.ui-panel-position-right.ui-panel-display-push {
+    -webkit-transform: translate3d(15em, 0, 0) !important;
+    -moz-transform: translate3d(15em, 0, 0) !important;
+    transform: translate3d(15em, 0, 0) !important;
+}
+
+.ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal, .ui-panel-animate.ui-panel-content-fixed-toolbar-position-left.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push, .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal, .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+    -webkit-transform: translate3d(10em, 0, 0) !important;
+    -moz-transform: translate3d(10em, 0, 0) !important;
+    transform: translate3d(10em, 0, 0) !important;
+}
+
+.ui-panel-animate.ui-panel-page-content-position-left {
+    -webkit-transform: translate3d(10em, 0, 0) !important;
+    -moz-transform: translate3d(10em, 0, 0) !important;
+    transform: translate3d(10em, 0, 0) !important;
+}
+
+.ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-reveal, .ui-panel-animate.ui-panel-content-fixed-toolbar-position-right.ui-panel-content-fixed-toolbar-open.ui-panel-content-fixed-toolbar-display-push, .ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal, .ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-push {
+    -webkit-transform: translate3d(-15em, 0, 0) !important;
+    -moz-transform: translate3d(-15em, 0, 0) !important;
+    transform: translate3d(-15em, 0, 0) !important;
+}
+/************子页面的大图展示*************/
+.bigimg {
+    position: relative;
+    margin:-10px!important;
+}
+
+    .bigimg img {
+        width: 100%;
+        height:180px;
+    }
+
+.bigimgtext {
+    position: absolute;
+    background: #43BCC5;
+    bottom: -13px;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    border-radius: 5px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    text-shadow:none;
+    /*letter-spacing: 2px;*/
+}

@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="songshe.master.cs" Inherits="Maticsoft.Web.MobileSongShe.songshe" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Widow-target" content="_top" />
+    <meta name="robots" content="none" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="browsermode" content="application" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>颂玺母婴</title>
+    <link href="/MobileSongShe/CSS/master.css" rel="stylesheet" />
+    <script src="/UserJs/jquery-1.11.3.min.js"></script>
+    <script src="/UserJs/jquery.dotdotdot.min.js"></script>
+    <link href="/UserJs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <script src="/UserJs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        $(function () {
+            var leftnavheight = $(document.body).height();
+            var innerheight = $(".ui-panel-inner").height();
+            $(".ui-panel-inner").css("margin-top", (leftnavheight - innerheight) / 2);
+
+            var width = $(".bigimg").width();
+            if (width > 0) {
+                $(".bigimg").height(width / 3);
+                $(".bigimg img").height(width / 3);
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div data-role="page" id="pageone">
+            <div data-role="panel" id="leftnav"  data-position-fixed="true" data-display="push" class="ui-pannel-inner" style="left: 160px;">
+                <ul id="navul">
+                    <li><a href="/MobileSongShe/Index.aspx" data-ajax="false" class="index" data-role='none'>首页</a></li>
+                    <li><a href="/MobileSongShe/SongSheBrand.aspx" data-ajax="false" data-role='none'>颂玺品牌</a></li>
+                    <li><a href="/MobileSongShe/InfantCare.aspx" data-ajax="false" data-role='none'>母婴照护</a></li>
+                    <li><a href="/MobileSongShe/SongSheEnvironment.aspx" data-ajax="false" data-role='none'>颂玺环境</a></li>
+                    <li><a href="/MobileSongShe/MonthOfMeals.aspx" data-ajax="false" data-role='none'>月子膳食</a></li>
+                    <li><a href="/MobileSongShe/NewsInfo.aspx" data-ajax="false" data-role='none'>新闻中心</a></li>
+                </ul>
+                <div class="line"></div>
+                <div class="lxphone">
+                    <div>
+                        <img src="/MobileSongShe/Image/phone.png" />
+                    </div>
+                    <div class="phonedetail">023-XXXXXXXX</div>
+                </div>
+                <div style="clear: both;"></div>
+                <div class="lxaddress">
+                    <div>
+                        <img src="/MobileSongShe/Image/where.png" />
+                    </div>
+                    <div class="addressdetail">重庆市的渝中区大坪时代天街时代汇13号楼17层</div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div data-role="header" class="head" data-position="fixed" data-tap-toggle="false">
+                <a href="#leftnav" data-role='none' class="bar">
+                    <img src="/MobileSongShe/Image/bar.png" />
+                </a>
+                <h1 data-role='none' class="logo">
+                    <img src="/MobileSongShe/Image/logo.png" />
+                </h1>
+                <a data-role='none' class="zixun">
+                    <img src="/MobileSongShe/Image/zx.png" />
+                    <span>咨询</span>
+                </a>
+            </div>
+            <div data-role="content" class="content" style="padding:0px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div data-role="footer" class="foot" data-position="fixed" data-tap-toggle="false">
+                <a href="wtai://wp/mc;023-XXXXXXXX" data-role='none'>电话咨询</a>
+                <a href="/MobileSongShe/Index.aspx" data-ajax="false" data-role='none'>首页</a>
+                <a href="/MobileSongShe/ContactUs.aspx" data-ajax="false" data-role='none'>联系我们</a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
