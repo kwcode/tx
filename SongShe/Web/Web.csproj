@@ -216,9 +216,6 @@
     <Content Include="OtherResource\jquery-treeview\demo\source.php" />
     <Content Include="OtherResource\jquery-treeview\demo\source.phps" />
     <Content Include="OtherResource\jquery-treeview\readme.md" />
-    <Content Include="OtherResource\Libian.ttc" />
-    <Content Include="OtherResource\lbj.TTF" />
-    <Content Include="OtherResource\FZXBSJW.TTF" />
     <Content Include="MobileSongShe\songshe.Master" />
     <Content Include="MobileSongShe\CSS\方正铁筋隶书简体.ttf" />
     <None Include="Properties\PublishProfiles\SongShe.pubxml" />

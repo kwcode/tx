@@ -1,10 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MobileSongShe/songshe.Master" AutoEventWireup="true" CodeBehind="InfantCare.aspx.cs" Inherits="Maticsoft.Web.MobileSongShe.InfantCare" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/MobileSongShe/CSS/InfantCare.css" rel="stylesheet" />
     <script>
-        $(function () {
+        $(document).one("pagecreate", "#pageone", function () {
             $("#navul li a").eq(2).addClass("current");
             $(".logo").html("母婴照护");
+        });
+        $(function () {
+            var hrefArray = window.location.href.split('#');
+            var Value = hrefArray[hrefArray.length - 1];
+            var TopValue = 0;
+            if (hrefArray.length > 1 && $("#" + Value).length > 0)
+                TopValue = $("#" + Value).offset().top;
+            var Height = $("div[data-role=header]").height();
+            if ((TopValue - Height - 20) > 0)
+                $("html,body").animate({ scrollTop: TopValue - Height - 20 }, "slow");
         });
     </script>
 </asp:Content>

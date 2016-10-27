@@ -96,7 +96,7 @@ img {
             left: 0px;
             right: 0px;
             background: #43BCC5;
-            height: 170px;
+            height: 50px;
             filter: alpha(opacity=50);
             opacity: 0.5;
             -moz-opacity: 0.5;
@@ -259,7 +259,7 @@ img {
     min-height:310px;
     border:1px solid #43BCC5;
     position:fixed;
-    top:12%;
+    top:25%;
     text-align:center;
     right:-8px;
     border-radius:10px;

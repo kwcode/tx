@@ -83,7 +83,7 @@
                                         <a href="/SongShe/SongSheBrand.aspx#brandintroduct">
                                             <% pc = PageContentList.Where(p => p.KeyID == 7).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"品牌介绍":pc.Title %><%--品牌介绍--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"颂玺母婴照护中心，是重庆力杨集团与台湾母婴照护知名连锁品牌机构合作共同打造的两岸跨界健康服务产业项目，具备中国妇产科最专业权威的医学团队资源、专业技术技能与硬件设备，是重庆市唯一拥有母婴产后四大照护体系的中心会所。":pc.Detail %><%--颂玺母婴照护中心，是重庆力杨集团与台湾母婴照护知名连锁品牌机构合作共同打造的两岸跨界健康服务产业项目，具备中国妇产科最专业权威的医学团队资源、专业技术技能与硬件设备，是重庆市唯一拥有母婴产后四大照护体系的中心会所。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"颂玺母婴照护中心，是重庆力杨集团与台湾母婴照护知名连锁品牌机构合作共同打造的两岸跨界健康服务产业项目，具备中国妇产科最专业权威的医学团队资源、专业技术技能与硬件设备，是重庆市唯一拥有母婴产后四大照护体系的中心会所。":pc.Detail %><%--颂玺母婴照护中心，是重庆力杨集团与台湾母婴照护知名连锁品牌机构合作共同打造的两岸跨界健康服务产业项目，具备中国妇产科最专业权威的医学团队资源、专业技术技能与硬件设备，是重庆市唯一拥有母婴产后四大照护体系的中心会所。--%></span></div>
                                         </a>
                                     </li>
 
@@ -91,21 +91,21 @@
                                         <a href="/SongShe/SongSheBrand.aspx#doctorteam">
                                             <% pc = PageContentList.Where(p => p.KeyID == 8).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"医疗团队":pc.Title %><%--医疗团队--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"拥有重庆市三甲医院强大的医疗团队支持，以及融入现代医学、心理学、营养学、产科及新生儿科护理学等综合学科的知识，引进台湾专业的医学母婴照护模式管理，让每位妈妈及宝宝都能获得最优质的照顾及服务。":pc.Detail %><%--拥有重庆市三甲医院强大的医疗团队支持，以及融入现代医学、心理学、营养学、产科及新生儿科护理学等综合学科的知识，引进台湾专业的医学母婴照护模式管理，让每位妈妈及宝宝都能获得最优质的照顾及服务。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"拥有重庆市三甲医院强大的医疗团队支持，以及融入现代医学、心理学、营养学、产科及新生儿科护理学等综合学科的知识，引进台湾专业的医学母婴照护模式管理，让每位妈妈及宝宝都能获得最优质的照顾及服务。":pc.Detail %><%--拥有重庆市三甲医院强大的医疗团队支持，以及融入现代医学、心理学、营养学、产科及新生儿科护理学等综合学科的知识，引进台湾专业的医学母婴照护模式管理，让每位妈妈及宝宝都能获得最优质的照顾及服务。--%></span></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/SongShe/SongSheBrand.aspx#serviceteam">
                                             <% pc = PageContentList.Where(p => p.KeyID == 9).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"服务团队":pc.Title %><%--服务团队--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"专业资深的护理团队，经验丰富的照护团队，以及中医师，营业师，高级泌乳顾问，产后修复师，让您在月子修养期间得到无微不至的照护。":pc.Detail %><%--专业资深的护理团队，经验丰富的照护团队，以及中医师，营业师，高级泌乳顾问，产后修复师，让您在月子修养期间得到无微不至的照护。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"专业资深的护理团队，经验丰富的照护团队，以及中医师，营业师，高级泌乳顾问，产后修复师，让您在月子修养期间得到无微不至的照护。":pc.Detail %><%--专业资深的护理团队，经验丰富的照护团队，以及中医师，营业师，高级泌乳顾问，产后修复师，让您在月子修养期间得到无微不至的照护。--%></span></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/SongShe/JoinUs.aspx">
                                             <% pc = PageContentList.Where(p => p.KeyID == 10).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"加入我们":pc.Title %><%--加入我们--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"寻找有爱之人。":pc.Detail %><%--寻找有爱之人。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"寻找有爱之人。":pc.Detail %><%--寻找有爱之人。--%></span></div>
                                         </a>
                                     </li>
                                 </ul>
@@ -122,7 +122,7 @@
                                         <a href="/SongShe/InfantCare.aspx#motherzh">
                                             <% pc = PageContentList.Where(p => p.KeyID == 11).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"妈妈照护":pc.Title %><%--妈妈照护--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"为妈妈提供一站式产后照护服务以及情绪管理，产后修复。":pc.Detail %><%--为妈妈提供一站式产后照护服务以及情绪管理，产后修复。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"为妈妈提供一站式产后照护服务以及情绪管理，产后修复。":pc.Detail %><%--为妈妈提供一站式产后照护服务以及情绪管理，产后修复。--%></span></div>
                                         </a>
                                     </li>
 
@@ -130,21 +130,21 @@
                                         <a href="/SongShe/InfantCare.aspx#babyhl">
                                             <% pc = PageContentList.Where(p => p.KeyID == 12).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"宝宝护理":pc.Title %><%--宝宝护理--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"全方位观察宝宝，用科学的专业医疗护理深入到宝宝每一天的成长。":pc.Detail %><%--全方位观察宝宝，用科学的专业医疗护理深入到宝宝每一天的成长。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"全方位观察宝宝，用科学的专业医疗护理深入到宝宝每一天的成长。":pc.Detail %><%--全方位观察宝宝，用科学的专业医疗护理深入到宝宝每一天的成长。--%></span></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/SongShe/InfantCare.aspx#xrtn">
                                             <% pc = PageContentList.Where(p => p.KeyID == 13).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"小儿推拿":pc.Title %><%--小儿推拿--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"通过对宝宝的中医推拿，预防宝宝生病，促进宝宝身体健康成长。":pc.Detail %><%--通过对宝宝的中医推拿，预防宝宝生病，促进宝宝身体健康成长。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"通过对宝宝的中医推拿，预防宝宝生病，促进宝宝身体健康成长。":pc.Detail %><%--通过对宝宝的中医推拿，预防宝宝生病，促进宝宝身体健康成长。--%></span></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/SongShe/InfantCare.aspx#motherjs">
                                             <% pc = PageContentList.Where(p => p.KeyID == 14).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"妈妈教室":pc.Title %><%--妈妈教室--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"为妈妈提供各类课程与指导，轻松获得新生儿照护以及产后保健知识。":pc.Detail %><%--为妈妈提供各类课程与指导，轻松获得新生儿照护以及产后保健知识。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"为妈妈提供各类课程与指导，轻松获得新生儿照护以及产后保健知识。":pc.Detail %><%--为妈妈提供各类课程与指导，轻松获得新生儿照护以及产后保健知识。--%></span></div>
                                         </a>
                                     </li>
                                 </ul>
@@ -161,21 +161,21 @@
                                         <a href="/SongShe/SongSheEnvironment.aspx#pthj">
                                             <% pc = PageContentList.Where(p => p.KeyID == 15).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"配套环境":pc.Title %><%--配套环境--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"隐身都市，离尘不离城，闹中取静，配套环境温馨私密，独立新风，除尘除菌，是您月子修养的最佳选择。":pc.Detail %><%--隐身都市，离尘不离城，闹中取静，配套环境温馨私密，独立新风，除尘除菌，是您月子修养的最佳选择。--%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"隐身都市，离尘不离城，闹中取静，配套环境温馨私密，独立新风，除尘除菌，是您月子修养的最佳选择。":pc.Detail %><%--隐身都市，离尘不离城，闹中取静，配套环境温馨私密，独立新风，除尘除菌，是您月子修养的最佳选择。--%></span></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/SongShe/SongSheEnvironment.aspx#wztf">
                                             <% pc = PageContentList.Where(p => p.KeyID == 16).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"王子套房":pc.Title %><%--王子套房--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/SongShe/SongSheEnvironment.aspx#gztf">
                                             <% pc = PageContentList.Where(p => p.KeyID == 17).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"公主套房":pc.Title %><%--公主套房--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
                                         </a>
                                     </li>
                                 </ul>
@@ -203,14 +203,14 @@
                                         <a href="/SongShe/NewsInfo.aspx#newzx">
                                             <% pc = PageContentList.Where(p => p.KeyID == 18).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"最新资讯":pc.Title %><%--最新资讯--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="/SongShe/NewsInfo.aspx#qwfb">
                                             <% pc = PageContentList.Where(p => p.KeyID == 19).FirstOrDefault(); %>
                                             <span><%=(pc==null||pc.Title=="")?"权威发布":pc.Title %><%--权威发布--%></span>
-                                            <div><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
+                                            <div style="display:none;"><span><%=(pc==null||pc.Detail=="")?"":pc.Detail %><%----%></span></div>
                                         </a>
                                     </li>
                                 </ul>
