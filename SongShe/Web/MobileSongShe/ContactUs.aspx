@@ -17,6 +17,52 @@
                 $(".yycg").hide();
             });
         });
+        function SubmitMessage(GroupName) {
+            var Name = $("div[name=" + GroupName + "] input[name=Name]").val();
+            var Phone = $("div[name=" + GroupName + "] input[name=Phone]").val();
+            var Email = $("div[name=" + GroupName + "] input[name=Email]").val();
+            var ComplaintType = $("div[name=" + GroupName + "] input[name=ComplaintType]").val();
+            var Content = $("div[name=" + GroupName + "] input[name=Content]").val();
+            if (Name == undefined || Name == "") {
+                alert("请输入您的姓名!");
+                return;
+            }
+            if (Phone == undefined || Phone == "") {
+                alert("请输入您的联系电话!");
+                return;
+            }
+            if (isNaN(Phone) || Phone.length != 11) {
+                alert("您输入的联系电话有误，请重新输入您的11位联系电话!");
+                return;
+            }
+            if (GroupName == "yycg") {
+                if (Email == undefined || Email == "") {
+                    alert("请输入您的邮箱!");
+                    return;
+                }
+            }
+            if (GroupName == "tsjy") {
+                if (ComplaintType == undefined || ComplaintType == "") {
+                    alert("请输入您的投诉类型!");
+                    return;
+                }
+            }
+            $.ajax({
+                dataType: "json",
+                type: "post",
+                url: "/Ajax/WebHandler.ashx",
+                data: { "action":"SubmitMessage", "GroupName": GroupName, "Name": Name, "Phone": Phone, "Email": Email, "ComplaintType": ComplaintType, "Content": Content },
+                success: function (data) {
+                    alert(data.msg);
+                    if (data.status == 1) {
+                        window.location.href = "/MobileSongShe/Index.aspx";
+                    }
+                },
+                error: function () {
+                    alert("提交留言信息失败，请刷新页面重新提交");
+                }
+            });
+        }
     </script>
     <style>
         .qq, .telphone {
@@ -175,35 +221,35 @@
                     <li>投诉及建议</li>
                 </ul>
             </div>
-            <div class="yycg">
+            <div name="yycg" class="yycg">
                 <div>
-                    <input type="text" placeholder="姓名" data-role='none' />
+                    <input type="text" placeholder="姓名" name="Name" data-role='none' />
                 </div>
                 <div>
-                    <input type="text" placeholder="手机" data-role='none' />
+                    <input type="text" placeholder="手机" name="Phone" data-role='none' />
                 </div>
                 <div>
-                    <input type="text" placeholder="邮箱" data-role='none' />
+                    <input type="text" placeholder="邮箱" name="Email" data-role='none' />
                 </div>
                 <div>
-                    <textarea placeholder="内容" data-role='none'></textarea>
+                    <textarea placeholder="内容" name="Content" data-role='none'></textarea>
                 </div>
-                <div class="tjly">提交留言</div>
+                <div class="tjly" onclick="SubmitMessage('yycg')">提交留言</div>
             </div>
-            <div class="tsjy" style="display:none;">
+            <div name="tsjy" class="tsjy" style="display:none;">
                 <div>
-                    <input type="text" placeholder="姓名" data-role='none' />
+                    <input type="text" placeholder="姓名" name="Name" data-role='none' />
                 </div>
                 <div>
-                    <input type="text" placeholder="手机" data-role='none' />
+                    <input type="text" placeholder="手机" name="Phone" data-role='none' />
                 </div>
                 <div>
-                    <input type="text" placeholder="投诉类型" data-role='none' />
+                    <input type="text" placeholder="投诉类型" name="ComplaintType" data-role='none' />
                 </div>
                 <div>
-                    <textarea placeholder="内容" data-role='none'></textarea>
+                    <textarea placeholder="内容" name="Content" data-role='none'></textarea>
                 </div>
-                <div class="tjly">提交留言</div>
+                <div class="tjly" onclick="SubmitMessage('tsjy')">提交留言</div>
             </div>
         </div>
     </div>

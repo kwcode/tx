@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Manager.cs" />
     <Compile Include="ManagerLog.cs" />
+    <Compile Include="MessageRecord.cs" />
     <Compile Include="News.cs" />
     <Compile Include="NewsType.cs" />
     <Compile Include="PageContent.cs" />

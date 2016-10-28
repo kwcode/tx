@@ -218,6 +218,7 @@
     <Content Include="OtherResource\jquery-treeview\readme.md" />
     <Content Include="MobileSongShe\songshe.Master" />
     <Content Include="MobileSongShe\CSS\方正铁筋隶书简体.ttf" />
+    <Content Include="Ajax\WebHandler.ashx" />
     <None Include="Properties\PublishProfiles\SongShe.pubxml" />
     <Content Include="SongShe\Index.html" />
     <Content Include="SongShe\InfantCare.aspx" />
@@ -1113,6 +1114,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajax\WebHandler.ashx.cs">
+      <DependentUpon>WebHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="BasePage\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

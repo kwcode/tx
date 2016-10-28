@@ -52,6 +52,8 @@
                 $(".main_image img").height(width / 3);
                 $("div.flicking_con").css("top", width / 3-15);
             }
+            $("div[class=muzhdiv] img").attr("height", ($(".main_image").width()-50) / 5);
+            //alert($(".main_image").width());
         });
     </script>
 </asp:Content>

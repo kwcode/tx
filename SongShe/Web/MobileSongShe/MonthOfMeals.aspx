@@ -63,16 +63,16 @@
             }
     </style>
     <script type="text/javascript">
-        $(function () {
-            var hrefArray = window.location.href.split('#');
-            var Value = hrefArray[hrefArray.length - 1];
-            var TopValue = 0;
-            if (hrefArray.length > 1 && $("#" + Value).length > 0)
-                TopValue = $("#" + Value).offset().top;
-            var Height = $("div[data-role=header]").height();
-            if ((TopValue - Height - 20) > 0)
-                $("html,body").animate({ scrollTop: TopValue - Height - 20 }, "slow");
-        });
+        //$(function () {
+        //    var hrefArray = window.location.href.split('#');
+        //    var Value = hrefArray[hrefArray.length - 1];
+        //    var TopValue = 0;
+        //    if (hrefArray.length > 1 && $("#" + Value).length > 0)
+        //        TopValue = $("#" + Value).offset().top;
+        //    var Height = $("div[data-role=header]").height();
+        //    if ((TopValue - Height - 20) > 0)
+        //        $("html,body").animate({ scrollTop: TopValue - Height - 20 }, "slow");
+        //});
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
