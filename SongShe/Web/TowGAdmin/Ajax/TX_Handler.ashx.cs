@@ -41,7 +41,40 @@ namespace Maticsoft.Web.TowGAdmin.Ajax
                 case "AEPageIndex"://修改首页环境展示图
                     AEPageIndex(context);
                     break;
+                case "DeleteMessageRecord"://删除留言信息
+                    DeleteMessageRecord(context);
+                    break;
+                case "UpdateMessageRecordStatus"://更改留言信息状态为已处理
+                    UpdateMessageRecordStatus(context);
+                    break;
             }
+        }
+        /// <summary>
+        /// 更改留言信息状态为已处理
+        /// </summary>
+        private void UpdateMessageRecordStatus(HttpContext context)
+        {
+            int MessageID = CommonHelper.Toint(context.Request["mid"]);
+            if (MessageID > 0)
+            {
+                string strSql = "Update MessageRecord set Status=1 where KeyID=" + MessageID;
+                DBUtility.DbHelperSQL.ExecuteSql(strSql);
+            }
+            context.Response.Write(CommonHelper.GetDwzAjaxJsonData("200", "留言信息更改为已处理状态成功", navTabId: "MessageRecordList", rel: "MessageRecordList"));
+            return;
+        }
+        /// <summary>
+        /// 删除留言信息
+        /// </summary>
+        private void DeleteMessageRecord(HttpContext context)
+        {
+            int MessageID = CommonHelper.Toint(context.Request["mid"]);
+            if (MessageID > 0)
+            {
+                new BLL.MessageRecord().Delete(MessageID);
+            }
+            context.Response.Write(CommonHelper.GetDwzAjaxJsonData("200", "留言信息删除成功", navTabId: "MessageRecordList", rel: "MessageRecordList"));
+            return;
         }
         /// <summary>
         /// 修改首页环境展示图

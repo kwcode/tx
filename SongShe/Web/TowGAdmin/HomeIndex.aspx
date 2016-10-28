@@ -171,6 +171,7 @@
                                         <li><a href="/TowGAdmin/SystemSet/ManagerList.aspx" target="navTab" rel="ManagerList" fresh="false">用户管理</a></li>
                                         <li><a href="/TowGAdmin/SystemSet/NewsList.aspx" target="navTab" rel="NewsList" fresh="false">新闻管理</a></li>
                                         <li><a href="/TowGAdmin/SystemSet/TeamList.aspx" target="navTab" rel="TeamList" fresh="false">团队信息管理</a></li>
+                                        <li><a href="/TowGAdmin/SystemSet/MessageRecordList.aspx" target="navTab" rel="MessageRecordList" fresh="false">留言信息管理</a></li>
                                     </ul>
                                 </li>
                                 <li><a>前台页面数据管理</a>

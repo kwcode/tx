@@ -237,6 +237,7 @@
     <Content Include="TowGAdmin\Ajax\TX_Handler.ashx" />
     <Content Include="SongShe\songshe.Master" />
     <Content Include="TowGAdmin\Ajax\UploadImgHandler.ashx" />
+    <Content Include="TowGAdmin\SystemSet\MessageRecordList.aspx" />
     <Content Include="UserJs\jquery.event.drag-1.5.min.js" />
     <Content Include="UserJs\jquery.mobile-1.4.5\jquery.mobile-1.4.5.min.map" />
     <None Include="Web.Debug.config">
@@ -1338,6 +1339,13 @@
     </Compile>
     <Compile Include="TowGAdmin\SystemSet\ManagerList.aspx.designer.cs">
       <DependentUpon>ManagerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TowGAdmin\SystemSet\MessageRecordList.aspx.cs">
+      <DependentUpon>MessageRecordList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TowGAdmin\SystemSet\MessageRecordList.aspx.designer.cs">
+      <DependentUpon>MessageRecordList.aspx</DependentUpon>
     </Compile>
     <Compile Include="TowGAdmin\SystemSet\NewsList.aspx.cs">
       <DependentUpon>NewsList.aspx</DependentUpon>

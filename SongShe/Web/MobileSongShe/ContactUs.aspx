@@ -22,7 +22,7 @@
             var Phone = $("div[name=" + GroupName + "] input[name=Phone]").val();
             var Email = $("div[name=" + GroupName + "] input[name=Email]").val();
             var ComplaintType = $("div[name=" + GroupName + "] input[name=ComplaintType]").val();
-            var Content = $("div[name=" + GroupName + "] input[name=Content]").val();
+            var Content = $("div[name=" + GroupName + "] textarea[name=Content]").val();
             if (Name == undefined || Name == "") {
                 alert("请输入您的姓名!");
                 return;

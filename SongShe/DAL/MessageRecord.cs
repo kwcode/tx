@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2016/10/28 15:47:56   N/A    初版
+* V0.01  2016/10/28 16:46:04   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -62,9 +62,9 @@ namespace Maticsoft.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into MessageRecord(");
-			strSql.Append("Name,Phone,Email,ComplaintType,Content,GroupName)");
+			strSql.Append("Name,Phone,Email,ComplaintType,Content,GroupName,AddTime,Status)");
 			strSql.Append(" values (");
-			strSql.Append("@Name,@Phone,@Email,@ComplaintType,@Content,@GroupName)");
+			strSql.Append("@Name,@Phone,@Email,@ComplaintType,@Content,@GroupName,@AddTime,@Status)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
@@ -72,13 +72,17 @@ namespace Maticsoft.DAL
 					new SqlParameter("@Email", SqlDbType.NVarChar,50),
 					new SqlParameter("@ComplaintType", SqlDbType.NVarChar,50),
 					new SqlParameter("@Content", SqlDbType.Text),
-					new SqlParameter("@GroupName", SqlDbType.NVarChar,50)};
+					new SqlParameter("@GroupName", SqlDbType.NVarChar,50),
+					new SqlParameter("@AddTime", SqlDbType.DateTime),
+					new SqlParameter("@Status", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
 			parameters[1].Value = model.Phone;
 			parameters[2].Value = model.Email;
 			parameters[3].Value = model.ComplaintType;
 			parameters[4].Value = model.Content;
 			parameters[5].Value = model.GroupName;
+			parameters[6].Value = model.AddTime;
+			parameters[7].Value = model.Status;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -102,7 +106,9 @@ namespace Maticsoft.DAL
 			strSql.Append("Email=@Email,");
 			strSql.Append("ComplaintType=@ComplaintType,");
 			strSql.Append("Content=@Content,");
-			strSql.Append("GroupName=@GroupName");
+			strSql.Append("GroupName=@GroupName,");
+			strSql.Append("AddTime=@AddTime,");
+			strSql.Append("Status=@Status");
 			strSql.Append(" where KeyID=@KeyID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Name", SqlDbType.NVarChar,50),
@@ -111,6 +117,8 @@ namespace Maticsoft.DAL
 					new SqlParameter("@ComplaintType", SqlDbType.NVarChar,50),
 					new SqlParameter("@Content", SqlDbType.Text),
 					new SqlParameter("@GroupName", SqlDbType.NVarChar,50),
+					new SqlParameter("@AddTime", SqlDbType.DateTime),
+					new SqlParameter("@Status", SqlDbType.Int,4),
 					new SqlParameter("@KeyID", SqlDbType.Int,4)};
 			parameters[0].Value = model.Name;
 			parameters[1].Value = model.Phone;
@@ -118,7 +126,9 @@ namespace Maticsoft.DAL
 			parameters[3].Value = model.ComplaintType;
 			parameters[4].Value = model.Content;
 			parameters[5].Value = model.GroupName;
-			parameters[6].Value = model.KeyID;
+			parameters[6].Value = model.AddTime;
+			parameters[7].Value = model.Status;
+			parameters[8].Value = model.KeyID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -182,7 +192,7 @@ namespace Maticsoft.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 KeyID,Name,Phone,Email,ComplaintType,Content,GroupName from MessageRecord ");
+			strSql.Append("select  top 1 KeyID,Name,Phone,Email,ComplaintType,Content,GroupName,AddTime,Status from MessageRecord ");
 			strSql.Append(" where KeyID=@KeyID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@KeyID", SqlDbType.Int,4)
@@ -238,6 +248,14 @@ namespace Maticsoft.DAL
 				{
 					model.GroupName=row["GroupName"].ToString();
 				}
+				if(row["AddTime"]!=null && row["AddTime"].ToString()!="")
+				{
+					model.AddTime=DateTime.Parse(row["AddTime"].ToString());
+				}
+				if(row["Status"]!=null && row["Status"].ToString()!="")
+				{
+					model.Status=int.Parse(row["Status"].ToString());
+				}
 			}
 			return model;
 		}
@@ -248,7 +266,7 @@ namespace Maticsoft.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select KeyID,Name,Phone,Email,ComplaintType,Content,GroupName ");
+			strSql.Append("select KeyID,Name,Phone,Email,ComplaintType,Content,GroupName,AddTime,Status ");
 			strSql.Append(" FROM MessageRecord ");
 			if(strWhere.Trim()!="")
 			{
@@ -268,7 +286,7 @@ namespace Maticsoft.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" KeyID,Name,Phone,Email,ComplaintType,Content,GroupName ");
+			strSql.Append(" KeyID,Name,Phone,Email,ComplaintType,Content,GroupName,AddTime,Status ");
 			strSql.Append(" FROM MessageRecord ");
 			if(strWhere.Trim()!="")
 			{

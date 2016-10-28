@@ -6,7 +6,7 @@
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2016/10/28 15:47:56   N/A    初版
+* V0.01  2016/10/28 16:46:04   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -33,6 +33,8 @@ namespace Maticsoft.Model
 		private string _complainttype;
 		private string _content;
 		private string _groupname;
+		private DateTime _addtime= DateTime.Now;
+		private int _status=0;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -88,6 +90,22 @@ namespace Maticsoft.Model
 		{
 			set{ _groupname=value;}
 			get{return _groupname;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public DateTime AddTime
+		{
+			set{ _addtime=value;}
+			get{return _addtime;}
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		public int Status
+		{
+			set{ _status=value;}
+			get{return _status;}
 		}
 		#endregion Model
 
