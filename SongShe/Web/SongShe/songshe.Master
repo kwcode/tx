@@ -54,8 +54,8 @@
 
             var width = $(".bigimg").width();
             if (width > 0) {
-                $(".bigimg").height(width / 3);
-                $(".bigimg img").height(width / 3);
+                $(".bigimg").height(width / 2.25);
+                $(".bigimg img").height(width / 2.25);
             }
         });
     </script>

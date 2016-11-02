@@ -45,12 +45,12 @@
             $("#navul li a").eq(0).addClass("current");
             var width = $(".main_image").width();
             if (width > 0) {
-                $(".main_visual").height(width / 3);
-                $(".main_image").height(width / 3);
-                $(".main_image li").height(width / 3);
-                $(".main_image a").height(width / 3);
-                $(".main_image img").height(width / 3);
-                $("div.flicking_con").css("top", width / 3-15);
+                $(".main_visual").height(width / 2.25);
+                $(".main_image").height(width / 2.25);
+                $(".main_image li").height(width / 2.25);
+                $(".main_image a").height(width / 2.25);
+                $(".main_image img").height(width / 2.25);
+                $("div.flicking_con").css("top", width / 2.25 - 15);
             }
             $("div[class=muzhdiv] img").attr("height", ($(".main_image").width()-50) / 5);
             //alert($(".main_image").width());

@@ -123,6 +123,7 @@ div.flicking_con {
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     height:40px;
     margin-left:10px;
+    font-weight:600;
 }
 .news .newtime {
     float:right;

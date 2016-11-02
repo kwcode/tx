@@ -10,10 +10,10 @@
         $(function () {
             var width = $("#focus").width();
             if (width > 0) {
-                $("#focus").height(width / 3);
-                $("#focus li").height(width / 3);
-                $("#focus a").height(width / 3);
-                $("#focus img").height(width / 3);
+                $("#focus").height(width / 2.25);
+                $("#focus li").height(width / 2.25);
+                $("#focus a").height(width / 2.25);
+                $("#focus img").height(width / 2.25);
             }
             //imgscorll
             if ($("#imgscorll a").length > 0)
