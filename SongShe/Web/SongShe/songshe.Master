@@ -10,6 +10,7 @@
     <title></title>
     <link href="/CSS/master.css" rel="stylesheet" />
     <script src="/UserJs/jquery-1.11.3.min.js"></script>
+    <script src="/SongShe/JS/PCUA.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script>
